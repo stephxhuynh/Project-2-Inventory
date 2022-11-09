@@ -30,7 +30,11 @@ Object-Oriented Design
 Explain your Object Oriented project design in a video.  Embed the video on the page. If either partner has not yet demonstrated Middle Developer proficiency for LO1, that person should record their own video and submit it in Project 1 Middle Developer Explanations (Make video at home). Only one video is required to be embedded in this page.
 Learning Outcomes
 Briefly outline how your project will demonstrate each of the required LOs.
+
+
 Completed LO1-6 in Project 1.
+
+
 LO1: Employ design principles of object-oriented programming
 LO2: Construct programs utilizing single and multidimensional arrays
 LO3: Construct programs utilizing object and classes in object-oriented programming, including aggregation
