@@ -15,26 +15,24 @@ They can do this by being prompted specific category and from there, going into 
  
 Searching inventory: Employees should be able to search up products by the same way they’re adding inventory. THey will be prompted for category then specific information such as type of TV, screen size, etc. The program will then try to find the item based on the information given and print out the details of the item.
 
-GUI implementation
-
-
+GUI implementation:
+Start with JFrame
+![Main Window](https://user-images.githubusercontent.com/89431035/200916613-c8dbedc9-5ef2-43bf-a118-e53499a3c8c3.png)
+Add buttons on JFrame for "Add" and "Check"
+Possibly either use grid
+When user clicks "Add" or "Check"
+A new window for selecting specifications for TV or computer will appear.
+![Add Frame](https://user-images.githubusercontent.com/89431035/200916815-e656e376-0eca-4969-ab6a-5dab1bcb85cd.png)
 
 
 
 
 UML Diagram
 Include a UML diagram or other description of the classes and interfaces you anticipate needing to write, including details about fields and methods, and class/interface responsibilities.
-
-
 Object-Oriented Design
 Explain your Object Oriented project design in a video.  Embed the video on the page. If either partner has not yet demonstrated Middle Developer proficiency for LO1, that person should record their own video and submit it in Project 1 Middle Developer Explanations (Make video at home). Only one video is required to be embedded in this page.
 Learning Outcomes
 Briefly outline how your project will demonstrate each of the required LOs.
-
-
-Completed LO1-6 in Project 1.
-
-
 LO1: Employ design principles of object-oriented programming
 LO2: Construct programs utilizing single and multidimensional arrays
 LO3: Construct programs utilizing object and classes in object-oriented programming, including aggregation
@@ -43,7 +41,6 @@ LO5: Construct programs utilizing exception handling
 LO6: Construct programs utilizing text file I/O
 LO7: Construct programs utilizing graphical user interfaces utilizing event-driven programming.
 Timeline
-
 Create a timeline of goals to accomplish each week. You may start with the sample timeline template below, but should fill in project-specific details.
  
 Sample Project Timeline Goals
@@ -52,7 +49,6 @@ Write the project proposal.
 Plan the code.  Determine classes (with fields and methods) and interfaces and their responsibilities.
 Design the GUI (sketch it out on paper).
 Begin writing project page.
-
 Week 2
 Write code for classes X, Y, Z.
 Develop test cases and test code as it is written.
@@ -60,14 +56,12 @@ Write code to create a non-functional GUI.
 Determine where exception handling is needed to ensure the program fails gracefully.
 Update project page with progress details.
 Submit code written so far.
-
 Week 3
 Finish writing classes.
 Add event handling to make the GUI functional.
 Test, test, test, debug, and test some more.
 Update project page with progress details.
 Submit code written so far.
-
 Week 4
 Debug any remaining problems.
 Create project demonstration video, including information about how each LO is used as part of the project.
