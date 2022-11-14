@@ -5,7 +5,7 @@ Planned Working Time
 Every Tuesday/Thursday: 12-4
 Saturday/Sundays: 12-4
 
-Project Pitch
+Project Pitch:
 Think about how a pitch on a crowdsourced funding platform (like Kickstarter or GoFundMe) might look. You should have several paragraphs describing your project, and some “faked” screenshots.  For the “faked” screenshots, you should mock-up the way the program will look when it runs, without actually writing the program.  At this point, your “faked” screenshots may be hand drawn or be created with a drawing program; they should include a GUI design or a sample of program text output.
 Include information about how the user interacts with the program (e.g.  what happens when the user clicks on a button or types in a text field?).
 
@@ -39,30 +39,34 @@ LO4: Construct programs utilizing inheritance and polymorphism, including abstra
 LO5: Construct programs utilizing exception handling
 LO6: Construct programs utilizing text file I/O
 LO7: Construct programs utilizing graphical user interfaces utilizing event-driven programming.
-Timeline
+Our project will demonstrate the usage of gui by allowing the user to visually select "Add" or "Check" through a button and then be able to also potentially view the entire inventory on the right side panel of the main frame.  Depending on whether the user selects "Add" or "Check" a similar new window will appear that will give the user selection options for the specifications of the product.  When selecting "add", the user will be able to either add a new product into the inventory or update the quantity of the product and will have a pop up window to show the quantity.  When "check" is selected the user will be able to view the quantity of that item in a new pop up window.
+
+
+Timeline:
 Create a timeline of goals to accomplish each week. You may start with the sample timeline template below, but should fill in project-specific details.
  
-Sample Project Timeline Goals
+Sample Project Timeline Goals:
 Week 1
-Write the project proposal.
-Plan the code.  Determine classes (with fields and methods) and interfaces and their responsibilities.
-Design the GUI (sketch it out on paper).
-Begin writing project page.
+Project proposal written.
+Included picture diagram of how our design will look.  Designed our GUI model through paint.  Got a head start on coding the main Jframe and to have it open a new window when "Add" or "Check" has been selected.  Still brainstorming on exactly how we will implement our entire project 1 code into our project 2.  Understand how to work with github and how to connect our repository from github to eclipse.  Figure out how to commit and push changes back onto our github repository so we can streamline our code workflow.
+
 Week 2
-Write code for classes X, Y, Z.
-Develop test cases and test code as it is written.
-Write code to create a non-functional GUI.
-Determine where exception handling is needed to ensure the program fails gracefully.
+Continue working on implementing our GUI windows so that the user will be able to smoothly add or check for products in the inventory.
+Add event handling to make the GUI functional and to respond a certain way when the buttons are pressed.
+Develop test cases and test code to make sure that our program will run the way we want.
+Determine if exception handling will be necessary to ensure the program fails gracefully.  We also want to design our GUI with the focus of making it user friendly so there will be less room for the user to make an error.
 Update project page with progress details.
 Submit code written so far.
+
 Week 3
-Finish writing classes.
-Add event handling to make the GUI functional.
+Figure out a way to display our inventory potentially on the main JFrame window.
+Finalize integrating GUI into our project 1.
 Test, test, test, debug, and test some more.
 Update project page with progress details.
 Submit code written so far.
+
 Week 4
-Debug any remaining problems.
+Debug any remaining problems.  Make sure that the program runs smoothly.  Potentially have our peers try to break our code or test it.
 Create project demonstration video, including information about how each LO is used as part of the project.
 Submit final code on Canvas, and add videos to project page.
 
