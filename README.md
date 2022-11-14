@@ -9,22 +9,21 @@ Project Pitch
 Think about how a pitch on a crowdsourced funding platform (like Kickstarter or GoFundMe) might look. You should have several paragraphs describing your project, and some “faked” screenshots.  For the “faked” screenshots, you should mock-up the way the program will look when it runs, without actually writing the program.  At this point, your “faked” screenshots may be hand drawn or be created with a drawing program; they should include a GUI design or a sample of program text output.
 Include information about how the user interacts with the program (e.g.  what happens when the user clicks on a button or types in a text field?).
 
-Designing an inventory store system of a variety of electronics that Employees may want to look up. This includes TV's and computers (laptop or desktop). There may be different sizes of TV and style (OLED or LCD). Computers can have different screen size and memory size. Laptops can have different battery lifes. Desktops can have different graphics cards.**note that the desktop are AIO(All in ones) the ones that are built into the monitor as well.  
+Designing an inventory store system of a variety of electronics that Employees may want to look up or add to the inventory system. This would mainly include for the products for TVs and computers. The inventory will hold different types of TVs as well as different screen sizes for TVs and computers.  Through the use of GUI the user will have the option to view the entire inventory, or add or check a specific product for the quantity.
+
 Adding inventory: Employees should be able to add quantities of products to inventory. 
-They can do this by being prompted specific category and from there, going into style of TV or memory size of computer, screen size, then how much they would like to add (quantities). It will update the inventory system with a new product or added quantities. 
+They can do this by simply clicking the add button, which will prompt the user into a new window to go through the specifications to know which product the user will be adding into the inventory.  Towards the end of the specification window, it will allow the user to add the quantity of that item.  Once the specifications has been selected and the number of quantity has been inputted, it will update the inventory system with a new product or update the quantity number. 
  
-Searching inventory: Employees should be able to search up products by the same way they’re adding inventory. THey will be prompted for category then specific information such as type of TV, screen size, etc. The program will then try to find the item based on the information given and print out the details of the item.
+Searching inventory: Employees should be able to search up products by the same way they’re adding inventory. The user will be prompted for category then specific information such as type of TV, screen size, etc. The program will then try to find the item based on the specifications chosen and inform the user the amount of that product.
 
 GUI implementation:
 Start with JFrame
 ![Main Window](https://user-images.githubusercontent.com/89431035/200916613-c8dbedc9-5ef2-43bf-a118-e53499a3c8c3.png)
 Add buttons on JFrame for "Add" and "Check"
-Possibly either use grid
 When user clicks "Add" or "Check"
 A new window for selecting specifications for TV or computer will appear.
 ![Add Frame](https://user-images.githubusercontent.com/89431035/200916815-e656e376-0eca-4969-ab6a-5dab1bcb85cd.png)
-
-
+Will have a cancel button in case user would like to go back to the main menu.
 
 
 UML Diagram
