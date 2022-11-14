@@ -1,10 +1,11 @@
+import javax.swing.JButton;
 
 public class InventoryMainView
 {
 
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
+		JButton button = new JButton();
 
 	}
 
