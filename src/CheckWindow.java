@@ -26,7 +26,7 @@ public class CheckWindow extends JFrame
 		frame = new JFrame();
 		
 		// Set the title.
-		frame.setTitle("Add");
+		frame.setTitle("Check");
 		
 		// Set the size of the window.
 		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
