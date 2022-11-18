@@ -28,6 +28,9 @@ Will have a cancel button in case user would like to go back to the main menu.
 
 UML Diagram
 Include a UML diagram or other description of the classes and interfaces you anticipate needing to write, including details about fields and methods, and class/interface responsibilities.
+![image](https://user-images.githubusercontent.com/117853577/202634434-b28f8fa8-e2d0-415b-8317-bf3c59d05739.png)
+
+
 Object-Oriented Design
 Explain your Object Oriented project design in a video.  Embed the video on the page. If either partner has not yet demonstrated Middle Developer proficiency for LO1, that person should record their own video and submit it in Project 1 Middle Developer Explanations (Make video at home). Only one video is required to be embedded in this page.
 Learning Outcomes
@@ -45,7 +48,7 @@ Our project will demonstrate the usage of gui by allowing the user to visually s
 Timeline:
 Create a timeline of goals to accomplish each week. You may start with the sample timeline template below, but should fill in project-specific details.
  
-Sample Project Timeline Goals:
+Timeline Goals:
 Week 1
 Project proposal written.
 Included picture diagram of how our design will look.  Designed our GUI model through paint.  Got a head start on coding the main Jframe and to have it open a new window when "Add" or "Check" has been selected.  Still brainstorming on exactly how we will implement our entire project 1 code into our project 2.  Understand how to work with github and how to connect our repository from github to eclipse.  Figure out how to commit and push changes back onto our github repository so we can streamline our code workflow.
