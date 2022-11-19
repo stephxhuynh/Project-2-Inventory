@@ -20,7 +20,7 @@ public class CheckWindow extends JFrame
 	final int WINDOW_WIDTH = 500;
 	final int WINDOW_HEIGHT = 250;
 	
-	CheckWindow()
+	public CheckWindow()
 	{
 		// Create new JFrame
 		frame = new JFrame();
