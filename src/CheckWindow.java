@@ -26,24 +26,24 @@ public class CheckWindow extends JFrame
 	private JRadioButton screen40;				// To reference 40 inch tv screen size
 	private JRadioButton screen50;				// To reference 50 inch tv screen size
 	private JRadioButton screen60;				// To reference 60 inch tv screen size
-	private ButtonGroup screenTVButtonGroup;	// To reference tv screen size button group
+	private ButtonGroup screenTVButtonGroup;
 	
 	// Comp screen size
 	private JPanel compScreenPanel;				// To reference the computer screen size panel
 	private JLabel compLabel;					// To reference the computer label
 	private JLabel compSizeLabel;				// To reference the computer size label
-	private JRadioButton screen15;				// To reference 15 inch computer screen size
-	private JRadioButton screen20;				// To reference 15 inch computer screen size
-	private JRadioButton screen25;				// To reference 15 inch computer screen size
-	private ButtonGroup compScreenButtonGroup;	// To reference computer screen size button group
+	private JRadioButton screen15;				// To 
+	private JRadioButton screen20;
+	private JRadioButton screen25;
+	private ButtonGroup compScreenButtonGroup;
 	
 	// Quantity
-	private JTextField tvQuantityTextField;		// To reference the tv quantity text field
-	private JTextField compQuantityTextField;	// To reference the computer quantity text field
-	private JPanel tvQuantityPanel;				// To reference the tv quantity panel
-	private JLabel tvQuantityLabel;				// To reference the tv quantity label
-	private JPanel compQuantityPanel;			// To reference the computer quantity panel
-	private JLabel compQuantityLabel;			// To reference the computer quantity label
+	private JTextField tvQuantityTextField;		// To reference the quantity tv text field
+	private JTextField compQuantityTextField;
+	private JPanel tvQuantityPanel;
+	private JLabel tvQuantityLabel;
+	private JPanel compQuantityPanel;
+	private JLabel compQuantityLabel;
 	
 	// Window size
 	final int WINDOW_WIDTH = 500;
@@ -145,14 +145,13 @@ public class CheckWindow extends JFrame
 		tvQuantityLabel = new JLabel("Quantity");
 		tvQuantityTextField = new JTextField(5);
 		compQuantityTextField = new JTextField(5);
-		tvQuantityPanel = new JPanel();
+		tvQuantityPanel = new JPanel(new GridLayout(0,1));
 		tvQuantityPanel.add(tvQuantityLabel);
 		tvQuantityPanel.add(tvQuantityTextField);
 		
-		compQuantityPanel = new JPanel();
+		compQuantityPanel = new JPanel(new GridLayout(0,1));
 		compQuantityLabel = new JLabel("Quantity");
-		compQuantityPanel.add(compQuantityLabel);
-		compQuantityPanel.add(compQuantityTextField);
+		
 		
 		// Add panels to spec panel
 		specTVPanel.add(typePanel);
@@ -160,7 +159,6 @@ public class CheckWindow extends JFrame
 		specTVPanel.add(tvQuantityPanel);
 		
 		specCompPanel.add(compScreenPanel);
-		specCompPanel.add(compQuantityPanel);
 		
 	}
 	
