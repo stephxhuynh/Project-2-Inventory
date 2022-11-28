@@ -31,10 +31,10 @@ public class CheckWindow extends JFrame
 	private JPanel compScreenPanel;				// To reference the computer screen size panel
 	private JLabel compLabel;					// To reference the computer label
 	private JLabel compSizeLabel;				// To reference the computer size label
-	private JRadioButton screen15;				// To 
-	private JRadioButton screen20;
-	private JRadioButton screen25;
-	private ButtonGroup compScreenButtonGroup;
+	private JRadioButton screen15;				// To reference 15 inch computer screen size
+	private JRadioButton screen20;				// To reference 20 inch computer screen size
+	private JRadioButton screen25;				// To reference 25 inch computer screen size
+	private ButtonGroup compScreenButtonGroup;	// To  reference computer screen size radio button group
 	
 	// Quantity
 	private JTextField tvQuantityTextField;		// To reference the quantity tv text field
