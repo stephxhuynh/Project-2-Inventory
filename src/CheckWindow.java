@@ -5,20 +5,47 @@ import java.awt.*;			// Needed for Color class
 
 public class CheckWindow extends JFrame
 {
+	// Panels
 	private JFrame frame;						// To reference the J frame
 	private JPanel mainPanel;					// To reference the main panel
 	private JPanel categoryPanel;				// To reference the message panel
-	private JPanel specPanel;					// To reference the specification panel
+	private JPanel specTVPanel;					// To reference the specification panel
+	private JPanel specCompPanel;
 	private JPanel typePanel;					// To reference the TV type panel
+	
+	// TV Type
 	private JLabel TVLabel;						// To reference the TV label
-	private JLabel compLabel;					// To reference the computer label
 	private JLabel typeLabel;					// To reference the type label
 	private JRadioButton OLEDrButton;			// To reference OLED radio button
 	private JRadioButton LCDrButton;			// To reference LCD radio button
 	private ButtonGroup typeRadioButtonGroup;	// To reference the type radio button group
 	
-	private JPanel screenSizePanel;				// To reference the size
+	// TV Screen size
+	private JPanel tvScreenPanel;				// To reference the size
+	private JLabel tvScreenLabel;				// To reference TV screen label
+	private JRadioButton screen40;				// To reference 40 inch tv screen size
+	private JRadioButton screen50;				// To reference 50 inch tv screen size
+	private JRadioButton screen60;				// To reference 60 inch tv screen size
+	private ButtonGroup screenTVButtonGroup;	// To reference tv screen size button group
 	
+	// Comp screen size
+	private JPanel compScreenPanel;				// To reference the computer screen size panel
+	private JLabel compLabel;					// To reference the computer label
+	private JLabel compSizeLabel;				// To reference the computer size label
+	private JRadioButton screen15;				// To reference 15 inch computer screen size
+	private JRadioButton screen20;				// To reference 15 inch computer screen size
+	private JRadioButton screen25;				// To reference 15 inch computer screen size
+	private ButtonGroup compScreenButtonGroup;	// To reference computer screen size button group
+	
+	// Quantity
+	private JTextField tvQuantityTextField;		// To reference the tv quantity text field
+	private JTextField compQuantityTextField;	// To reference the computer quantity text field
+	private JPanel tvQuantityPanel;				// To reference the tv quantity panel
+	private JLabel tvQuantityLabel;				// To reference the tv quantity label
+	private JPanel compQuantityPanel;			// To reference the computer quantity panel
+	private JLabel compQuantityLabel;			// To reference the computer quantity label
+	
+	// Window size
 	final int WINDOW_WIDTH = 500;
 	final int WINDOW_HEIGHT = 250;
 	
@@ -37,54 +64,103 @@ public class CheckWindow extends JFrame
 		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		
 		// Specify what happens when the close button is clicked.
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		// Main Panel
 		mainPanel = new JPanel();
-		mainPanel.setLayout(new BorderLayout());
+		mainPanel.setLayout(new GridLayout(2, 2, 50, 50));
 		
 		buildMainPanel();
 		
 		frame.add(mainPanel);
 		
-		mainPanel.add(categoryPanel, BorderLayout.WEST);
-		mainPanel.add(specPanel, BorderLayout.CENTER);
+		mainPanel.add(TVLabel);
+		mainPanel.add(specTVPanel);
+		mainPanel.add(compLabel);
+		mainPanel.add(specCompPanel);
 		frame.setVisible(true);
 	}
 	
 	private void buildMainPanel()
 	{
 		// Category Panel
-		categoryPanel = new JPanel();
-		categoryPanel.setLayout(new GridLayout(2, 1, 30, 30));
 		TVLabel = new JLabel("TV");
 		compLabel = new JLabel("Computer");
-		categoryPanel.add(TVLabel);
-		categoryPanel.add(compLabel);
 		
 		// Specifications Panel
-		specPanel = new JPanel();
-		specPanel.setLayout(new GridLayout(2, 3, 25, 25));
+		specTVPanel = new JPanel();
+		specTVPanel.setLayout(new GridLayout(1, 0));
+		specCompPanel = new JPanel();
+		specCompPanel.setLayout(new GridLayout(1, 0));
 		
 		// Type panel inside spec panel
 		typePanel = new JPanel();
-		typePanel.setLayout(new GridLayout(1, 2, 10, 10));
+		typePanel.setLayout(new GridLayout(3, 1));
 		typeLabel = new JLabel("Type");
 		OLEDrButton = new JRadioButton("OLED");
 		LCDrButton = new JRadioButton("LCD");
 		typePanel.add(typeLabel);
 		typePanel.add(OLEDrButton);
 		typePanel.add(LCDrButton);
-		
-		// Screen size panel inside spec panel
-		
-		
 		// Group type radio buttons
 		typeRadioButtonGroup = new ButtonGroup();
 		typeRadioButtonGroup.add(OLEDrButton);
 		typeRadioButtonGroup.add(LCDrButton);
-		specPanel.add(typePanel);
 		
+		// Screen size panel for TV inside spec panel
+		tvScreenPanel = new JPanel();
+		tvScreenPanel.setLayout(new GridLayout(4,1));
+		tvScreenLabel = new JLabel("Screen Size");
+		screen40 = new JRadioButton("40");
+		screen50 = new JRadioButton("50");
+		screen60 = new JRadioButton("60");
+		tvScreenPanel.add(tvScreenLabel);
+		tvScreenPanel.add(screen40);
+		tvScreenPanel.add(screen50);
+		tvScreenPanel.add(screen60);
+		// Group TV screen radio buttons
+		screenTVButtonGroup = new ButtonGroup();
+		screenTVButtonGroup.add(screen40);
+		screenTVButtonGroup.add(screen50);
+		screenTVButtonGroup.add(screen60);
+		
+		// Screen size panel for Computer
+		compScreenPanel = new JPanel();
+		compScreenPanel.setLayout(new GridLayout(4,1));
+		compSizeLabel = new JLabel("Screen Size");
+		screen15 = new JRadioButton("15");
+		screen20 = new JRadioButton("20");
+		screen25 = new JRadioButton("25");
+		compScreenPanel.add(compSizeLabel);
+		compScreenPanel.add(screen15);
+		compScreenPanel.add(screen20);
+		compScreenPanel.add(screen25);
+		// Group Comp screen radio buttons
+		compScreenButtonGroup = new ButtonGroup();
+		compScreenButtonGroup.add(screen15);
+		compScreenButtonGroup.add(screen20);
+		compScreenButtonGroup.add(screen25);
+		
+		// Quantity panel
+		tvQuantityLabel = new JLabel("Quantity");
+		tvQuantityTextField = new JTextField(5);
+		compQuantityTextField = new JTextField(5);
+		tvQuantityPanel = new JPanel();
+		tvQuantityPanel.add(tvQuantityLabel);
+		tvQuantityPanel.add(tvQuantityTextField);
+		
+		compQuantityPanel = new JPanel();
+		compQuantityLabel = new JLabel("Quantity");
+		compQuantityPanel.add(compQuantityLabel);
+		compQuantityPanel.add(compQuantityTextField);
+		
+		// Add panels to spec panel
+		specTVPanel.add(typePanel);
+		specTVPanel.add(tvScreenPanel);
+		specTVPanel.add(tvQuantityPanel);
+		
+		specCompPanel.add(compScreenPanel);
+		specCompPanel.add(compQuantityPanel);
 		
 	}
 	
