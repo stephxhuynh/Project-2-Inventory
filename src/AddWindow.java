@@ -36,16 +36,16 @@ public class AddWindow extends JFrame
 	private ButtonGroup compScreenButtonGroup;	
 	
 	// Quantity
-	private JTextField tvQuantityTextField;		// To reference the quantity tv text field
-	private JTextField compQuantityTextField;
-	private JPanel tvQuantityPanel;
-	private JLabel tvQuantityLabel;
-	private JPanel compQuantityPanel;
-	private JLabel compQuantityLabel;
+	private JTextField tvQuantityTextField;		// To reference the tv quantity text field
+	private JTextField compQuantityTextField;	// To reference the computer quantity text field
+	private JPanel tvQuantityPanel;				// To reference the tv quantity panel
+	private JLabel tvQuantityLabel;				// To reference the tv quanity label
+	private JPanel compQuantityPanel;			// To reference the computer quantity panel
+	private JLabel compQuantityLabel;			// To reference the computer quantity label
 	
 	// Window size
-	final int WINDOW_WIDTH = 500;
-	final int WINDOW_HEIGHT = 250;
+	final int WINDOW_WIDTH = 1000;
+	final int WINDOW_HEIGHT = 500;
 	
 	// Add/modify buttons
 	private JPanel updatePanel;
