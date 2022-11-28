@@ -1,4 +1,7 @@
 import javax.swing.*;		// Needed for Swing classes
+
+import AddWindow.ButtonListener;
+
 import java.awt.event.*;	// Needed for ActionListener Interface
 import java.awt.*;			// Needed for Color class
 
@@ -44,8 +47,12 @@ public class CheckWindow extends JFrame
 	private JPanel compQuantityPanel;			// To reference the computer quantity panel
 	private JLabel compQuantityLabel;			// To reference the computer quantity label
 	
+	// Cancel
+	private JPanel cancelPanel;					// To reference cancel panel
+	private JButton cancelButton;				// To reference cancel button
+	
 	// Window size
-	final int WINDOW_WIDTH = 1000;
+	final int WINDOW_WIDTH = 1300;
 	final int WINDOW_HEIGHT = 500;
 	
 	/**
@@ -67,7 +74,7 @@ public class CheckWindow extends JFrame
 		
 		// Main Panel
 		mainPanel = new JPanel();
-		mainPanel.setLayout(new GridLayout(2, 2, 50, 50));
+		mainPanel.setLayout(new GridLayout(3, 3, 20, 20));
 		
 		buildMainPanel();
 		
@@ -77,6 +84,10 @@ public class CheckWindow extends JFrame
 		mainPanel.add(specTVPanel);
 		mainPanel.add(compLabel);
 		mainPanel.add(specCompPanel);
+		mainPanel.add(cancelPanel);
+		
+		cancelButton.addActionListener(new ButtonListener());
+		
 		frame.setVisible(true);
 	}
 	
@@ -108,7 +119,7 @@ public class CheckWindow extends JFrame
 		
 		// Screen size panel for TV inside spec panel
 		tvScreenPanel = new JPanel();
-		tvScreenPanel.setLayout(new GridLayout(4,1));
+		tvScreenPanel.setLayout(new GridLayout(4, 1));
 		tvScreenLabel = new JLabel("Screen Size");
 		screen40 = new JRadioButton("40");
 		screen50 = new JRadioButton("50");
@@ -125,7 +136,7 @@ public class CheckWindow extends JFrame
 		
 		// Screen size panel for Computer
 		compScreenPanel = new JPanel();
-		compScreenPanel.setLayout(new GridLayout(4,1));
+		compScreenPanel.setLayout(new GridLayout(4, 1));
 		compSizeLabel = new JLabel("Screen Size");
 		screen15 = new JRadioButton("15");
 		screen20 = new JRadioButton("20");
@@ -143,25 +154,31 @@ public class CheckWindow extends JFrame
 		// Quantity panel for TV
 		tvQuantityLabel = new JLabel("Quantity");
 		tvQuantityTextField = new JTextField(5);
-		tvQuantityPanel = new JPanel(new GridLayout(0,1));
+		tvQuantityPanel = new JPanel(new FlowLayout());
 		tvQuantityPanel.add(tvQuantityLabel);
 		tvQuantityPanel.add(tvQuantityTextField);
 		
 		// Quantity panel for computer
-		compQuantityPanel = new JPanel(new GridLayout(0,1));
 		compQuantityLabel = new JLabel("Quantity");
 		compQuantityTextField = new JTextField(5);
+		compQuantityPanel = new JPanel(new FlowLayout());
 		compQuantityPanel.add(compQuantityLabel);
 		compQuantityPanel.add(compQuantityTextField);
 		
-		// Add panels to spec panel
+		// Top TV spec panel
 		specTVPanel.add(typePanel);
 		specTVPanel.add(tvScreenPanel);
 		specTVPanel.add(tvQuantityPanel);
 		
+		// Botton Computer spec panel
 		specCompPanel.add(compScreenPanel);
 		specCompPanel.add(compQuantityPanel);
 		
+		// Cancel panel
+		cancelPanel = new JPanel(new FlowLayout());
+		cancelButton = new JButton("Cancel");
+		cancelButton.setPreferredSize(new Dimension(200, 100));
+		cancelPanel.add(cancelButton);
 	}
 	
 	private class RadioButtonListener implements ActionListener
@@ -171,6 +188,19 @@ public class CheckWindow extends JFrame
 		{
 			if (e.getSource() == OLEDrButton)
 			{
+			}
+		}
+	}
+	
+	private class ButtonListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			if (e.getSource() == cancelButton)
+			{
+				frame.dispose();
+				InventoryMainView mWindow = new InventoryMainView();
 			}
 		}
 	}
