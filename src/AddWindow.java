@@ -7,7 +7,7 @@ public class AddWindow extends JFrame
 	// Panels
 	private JFrame frame;						// To reference the J frame
 	private JPanel mainPanel;					// To reference the main panel
-	private JPanel tvSpecPanel;					// To reference the tv specification panel
+	private JPanel tvSpecPanel;					// To reference the Tv specification panel
 	private JPanel compSpecPanel;				// To reference the computer specification panel
 	private JPanel typePanel;					// To reference the TV type panel
 	
@@ -21,9 +21,9 @@ public class AddWindow extends JFrame
 	// TV Screen size
 	private JPanel tvScreenPanel;				// To reference the size
 	private JLabel tvScreenLabel;				// To reference TV screen label
-	private JRadioButton screen40;				// To reference 40 inch tv screen size
-	private JRadioButton screen50;				// To reference 50 inch tv screen size
-	private JRadioButton screen60;				// To reference 60 inch tv screen size
+	private JRadioButton screen40;				// To reference 40 inch TV screen size
+	private JRadioButton screen50;				// To reference 50 inch TV screen size
+	private JRadioButton screen60;				// To reference 60 inch TV screen size
 	private ButtonGroup screenTVButtonGroup;
 	
 	// Comp screen size
@@ -36,22 +36,25 @@ public class AddWindow extends JFrame
 	private ButtonGroup compScreenButtonGroup;	
 	
 	// Quantity
-	private JTextField tvQuantityTextField;		// To reference the tv quantity text field
+	private JTextField tvQuantityTextField;		// To reference the TV quantity text field
 	private JTextField compQuantityTextField;	// To reference the computer quantity text field
-	private JPanel tvQuantityPanel;				// To reference the tv quantity panel
-	private JLabel tvQuantityLabel;				// To reference the tv quanity label
+	private JPanel tvQuantityPanel;				// To reference the TV quantity panel
+	private JLabel tvQuantityLabel;				// To reference the TV quantity label
 	private JPanel compQuantityPanel;			// To reference the computer quantity panel
 	private JLabel compQuantityLabel;			// To reference the computer quantity label
 	
-	// Window size
-	final int WINDOW_WIDTH = 1000;
-	final int WINDOW_HEIGHT = 500;
+	// Add/Modify
+	private JPanel updatePanel;					// To reference update panel
+	private JButton tvUpdateButton;				// To reference TV update button
+	private JButton compUpdateButton;			// To reference computer update button
 	
-	// Add/modify buttons
-	private JPanel updatePanel;
-	private JButton tvUpdateButton;
-	private JButton compUpdateButton;
-	private JButton cancelButton;
+	// Cancel
+	private JPanel cancelPanel;					// To reference cancel panel
+	private JButton cancelButton;				// To reference cancel button
+	
+	// Window size
+	final int WINDOW_WIDTH = 1300;
+	final int WINDOW_HEIGHT = 500;
 	
 	/**
 	 * Constructor
@@ -62,7 +65,7 @@ public class AddWindow extends JFrame
 		frame = new JFrame();
 		
 		// Set the title.
-		frame.setTitle("Check");
+		frame.setTitle("Add");
 		
 		// Set the size of the window.
 		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -72,7 +75,7 @@ public class AddWindow extends JFrame
 		
 		// Main Panel
 		mainPanel = new JPanel();
-		mainPanel.setLayout(new GridLayout(2, 2, 50, 50));
+		mainPanel.setLayout(new GridLayout(3, 3, 20, 20));
 		
 		buildMainPanel();
 		
@@ -80,9 +83,12 @@ public class AddWindow extends JFrame
 		
 		mainPanel.add(TVLabel);
 		mainPanel.add(tvSpecPanel);
-		mainPanel.add(cancelButton);
 		mainPanel.add(compLabel);
 		mainPanel.add(compSpecPanel);
+		mainPanel.add(cancelPanel);
+		
+		cancelButton.addActionListener(new ButtonListener());
+		
 		frame.setVisible(true);
 	}
 	
@@ -114,7 +120,7 @@ public class AddWindow extends JFrame
 		
 		// Screen size panel for TV inside spec panel
 		tvScreenPanel = new JPanel();
-		tvScreenPanel.setLayout(new GridLayout(4,1));
+		tvScreenPanel.setLayout(new GridLayout(4, 1));
 		tvScreenLabel = new JLabel("Screen Size");
 		screen40 = new JRadioButton("40");
 		screen50 = new JRadioButton("50");
@@ -131,7 +137,7 @@ public class AddWindow extends JFrame
 		
 		// Screen size panel for Computer
 		compScreenPanel = new JPanel();
-		compScreenPanel.setLayout(new GridLayout(4,1));
+		compScreenPanel.setLayout(new GridLayout(4, 1));
 		compSizeLabel = new JLabel("Screen Size");
 		screen15 = new JRadioButton("15");
 		screen20 = new JRadioButton("20");
@@ -149,7 +155,7 @@ public class AddWindow extends JFrame
 		// Quantity panel for TV
 		tvQuantityLabel = new JLabel("Quantity");
 		tvQuantityTextField = new JTextField(5);
-		tvQuantityPanel = new JPanel();
+		tvQuantityPanel = new JPanel(new FlowLayout());
 		tvQuantityPanel.add(tvQuantityLabel);
 		tvQuantityPanel.add(tvQuantityTextField);
 		
@@ -157,27 +163,35 @@ public class AddWindow extends JFrame
 		compQuantityPanel = new JPanel();
 		compQuantityLabel = new JLabel("Quantity");
 		compQuantityTextField = new JTextField(5);
+		compQuantityPanel = new JPanel(new FlowLayout());
 		compQuantityPanel.add(compQuantityLabel);
 		compQuantityPanel.add(compQuantityTextField);
 		
-		
 		// Update quantities for items in inventory
-		updatePanel = new JPanel(new GridLayout(0,1));
+		updatePanel = new JPanel(new GridLayout(0, 1));
 		tvUpdateButton = new JButton("Add/Modify");
+		tvUpdateButton.setPreferredSize(new Dimension(50, 50));
 		compUpdateButton = new JButton("Add/Modify");
-		cancelButton = new JButton("Cancel");
+		compUpdateButton.setPreferredSize(new Dimension(50, 50));
 //		updatePanel.add(tvUpdateButton);
 //		updatePanel.add(compUpdateButton);
 		
-		// Add panels to spec panel
+		// Top TV spec panel
 		tvSpecPanel.add(typePanel);
 		tvSpecPanel.add(tvScreenPanel);
 		tvSpecPanel.add(tvQuantityPanel);
 		tvSpecPanel.add(tvUpdateButton);
 		
+		// Botton Computer spec panel
 		compSpecPanel.add(compScreenPanel);
 		compSpecPanel.add(compQuantityPanel);
 		compSpecPanel.add(compUpdateButton);
+		
+		// Cancel panel
+		cancelPanel = new JPanel(new FlowLayout());
+		cancelButton = new JButton("Cancel");
+		cancelButton.setPreferredSize(new Dimension(200, 100));
+		cancelPanel.add(cancelButton);
 	}
 	
 	private class RadioButtonListener implements ActionListener
@@ -187,6 +201,19 @@ public class AddWindow extends JFrame
 		{
 			if (e.getSource() == OLEDrButton)
 			{
+			}
+		}
+	}
+	
+	private class ButtonListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			if (e.getSource() == cancelButton)
+			{
+				frame.dispose();
+				InventoryMainView mWindow = new InventoryMainView();
 			}
 		}
 	}
