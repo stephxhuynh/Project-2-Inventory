@@ -177,7 +177,7 @@ public class CheckWindow extends JFrame
 		// Cancel panel
 		cancelPanel = new JPanel(new FlowLayout());
 		cancelButton = new JButton("Cancel");
-		cancelButton.setPreferredSize(new Dimension(200, 100));
+		cancelButton.setPreferredSize(new Dimension(150, 100));
 		cancelPanel.add(cancelButton);
 	}
 	

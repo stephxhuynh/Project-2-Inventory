@@ -44,7 +44,8 @@ public class AddWindow extends JFrame
 	private JLabel compQuantityLabel;			// To reference the computer quantity label
 	
 	// Add/Modify
-	private JPanel updatePanel;					// To reference update panel
+	private JPanel tvUpdatePanel;				// To reference TV update panel
+	private JPanel compUpdatePanel;				// To reference computer update panel
 	private JButton tvUpdateButton;				// To reference TV update button
 	private JButton compUpdateButton;			// To reference computer update button
 	
@@ -168,29 +169,30 @@ public class AddWindow extends JFrame
 		compQuantityPanel.add(compQuantityTextField);
 		
 		// Update quantities for items in inventory
-		updatePanel = new JPanel(new GridLayout(0, 1));
+		tvUpdatePanel = new JPanel();
 		tvUpdateButton = new JButton("Add/Modify");
-		tvUpdateButton.setPreferredSize(new Dimension(50, 50));
+		tvUpdateButton.setPreferredSize(new Dimension(100, 100));
+		tvUpdatePanel.add(tvUpdateButton);
+		compUpdatePanel = new JPanel();
 		compUpdateButton = new JButton("Add/Modify");
-		compUpdateButton.setPreferredSize(new Dimension(50, 50));
-//		updatePanel.add(tvUpdateButton);
-//		updatePanel.add(compUpdateButton);
+		compUpdateButton.setPreferredSize(new Dimension(100, 100));
+		compUpdatePanel.add(compUpdateButton);
 		
 		// Top TV spec panel
 		tvSpecPanel.add(typePanel);
 		tvSpecPanel.add(tvScreenPanel);
 		tvSpecPanel.add(tvQuantityPanel);
-		tvSpecPanel.add(tvUpdateButton);
+		tvSpecPanel.add(tvUpdatePanel);
 		
 		// Botton Computer spec panel
 		compSpecPanel.add(compScreenPanel);
 		compSpecPanel.add(compQuantityPanel);
-		compSpecPanel.add(compUpdateButton);
+		compSpecPanel.add(compUpdatePanel);
 		
 		// Cancel panel
-		cancelPanel = new JPanel(new FlowLayout());
+		cancelPanel = new JPanel();
 		cancelButton = new JButton("Cancel");
-		cancelButton.setPreferredSize(new Dimension(200, 100));
+		cancelButton.setPreferredSize(new Dimension(150, 100));
 		cancelPanel.add(cancelButton);
 	}
 	
