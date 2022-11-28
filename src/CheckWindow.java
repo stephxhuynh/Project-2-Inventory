@@ -38,7 +38,7 @@ public class CheckWindow extends JFrame
 	
 	// Quantity
 	private JTextField tvQuantityTextField;		// To reference the quantity tv text field
-	private JTextField compQuantityTextField;
+	private JTextField compQuantityTextField;	
 	private JPanel tvQuantityPanel;
 	private JLabel tvQuantityLabel;
 	private JPanel compQuantityPanel;

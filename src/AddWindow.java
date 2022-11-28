@@ -4,11 +4,11 @@ import java.awt.*;			// Needed for Color class
 
 public class AddWindow extends JFrame
 {
-// Panels
+	// Panels
 	private JFrame frame;						// To reference the J frame
 	private JPanel mainPanel;					// To reference the main panel
-	private JPanel specTVPanel;					// To reference the specification panel
-	private JPanel specCompPanel;
+	private JPanel tvSpecPanel;					// To reference the tv specification panel
+	private JPanel compSpecPanel;				// To reference the computer specification panel
 	private JPanel typePanel;					// To reference the TV type panel
 	
 	// TV Type
@@ -30,10 +30,10 @@ public class AddWindow extends JFrame
 	private JPanel compScreenPanel;				// To reference the computer screen size panel
 	private JLabel compLabel;					// To reference the computer label
 	private JLabel compSizeLabel;				// To reference the computer size label
-	private JRadioButton screen15;				// To 
-	private JRadioButton screen20;
-	private JRadioButton screen25;
-	private ButtonGroup compScreenButtonGroup;
+	private JRadioButton screen15;				// To reference 15 inch computer screen size
+	private JRadioButton screen20;				// To reference 20 inch computer screen size
+	private JRadioButton screen25;				// To reference 25 inch computer screen size
+	private ButtonGroup compScreenButtonGroup;	
 	
 	// Quantity
 	private JTextField tvQuantityTextField;		// To reference the quantity tv text field
@@ -79,10 +79,10 @@ public class AddWindow extends JFrame
 		frame.add(mainPanel);
 		
 		mainPanel.add(TVLabel);
-		mainPanel.add(specTVPanel);
+		mainPanel.add(tvSpecPanel);
 		mainPanel.add(cancelButton);
 		mainPanel.add(compLabel);
-		mainPanel.add(specCompPanel);
+		mainPanel.add(compSpecPanel);
 		frame.setVisible(true);
 	}
 	
@@ -93,10 +93,10 @@ public class AddWindow extends JFrame
 		compLabel = new JLabel("Computer");
 		
 		// Specifications Panel
-		specTVPanel = new JPanel();
-		specTVPanel.setLayout(new GridLayout(1, 0));
-		specCompPanel = new JPanel();
-		specCompPanel.setLayout(new GridLayout(1, 0));
+		tvSpecPanel = new JPanel();
+		tvSpecPanel.setLayout(new GridLayout(1, 0));
+		compSpecPanel = new JPanel();
+		compSpecPanel.setLayout(new GridLayout(1, 0));
 		
 		// Type panel inside spec panel
 		typePanel = new JPanel();
@@ -170,14 +170,14 @@ public class AddWindow extends JFrame
 //		updatePanel.add(compUpdateButton);
 		
 		// Add panels to spec panel
-		specTVPanel.add(typePanel);
-		specTVPanel.add(tvScreenPanel);
-		specTVPanel.add(tvQuantityPanel);
-		specTVPanel.add(tvUpdateButton);
+		tvSpecPanel.add(typePanel);
+		tvSpecPanel.add(tvScreenPanel);
+		tvSpecPanel.add(tvQuantityPanel);
+		tvSpecPanel.add(tvUpdateButton);
 		
-		specCompPanel.add(compScreenPanel);
-		specCompPanel.add(compQuantityPanel);
-		specCompPanel.add(compUpdateButton);
+		compSpecPanel.add(compScreenPanel);
+		compSpecPanel.add(compQuantityPanel);
+		compSpecPanel.add(compUpdateButton);
 	}
 	
 	private class RadioButtonListener implements ActionListener
