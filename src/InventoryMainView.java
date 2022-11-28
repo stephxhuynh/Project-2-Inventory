@@ -68,10 +68,15 @@ public class InventoryMainView extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
-			if (e.getSource() == checkButton || e.getSource() == addButton)
+			if (e.getSource() == checkButton)
 			{
 				frame.dispose();
-				CheckWindow window = new CheckWindow();
+				CheckWindow cWindow = new CheckWindow();
+			}
+			if(e.getSource() == addButton)
+			{
+				frame.dispose();
+				AddWindow aWindow = new AddWindow();
 			}
 		}
 	}
