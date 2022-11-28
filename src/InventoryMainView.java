@@ -49,7 +49,7 @@ public class InventoryMainView extends JFrame
 	{
 		// Button Panel
 		buttonPanel = new JPanel();
-		buttonPanel.setLayout(new GridLayout(2, 1, 30, 30));
+		buttonPanel.setLayout(new GridLayout(2, 1));
 		addButton = new JButton("Add");
 		checkButton = new JButton("Check");
 		buttonPanel.add(addButton);

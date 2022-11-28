@@ -8,7 +8,6 @@ public class CheckWindow extends JFrame
 	// Panels
 	private JFrame frame;						// To reference the J frame
 	private JPanel mainPanel;					// To reference the main panel
-	private JPanel categoryPanel;				// To reference the message panel
 	private JPanel specTVPanel;					// To reference the specification panel
 	private JPanel specCompPanel;
 	private JPanel typePanel;					// To reference the TV type panel
@@ -141,17 +140,19 @@ public class CheckWindow extends JFrame
 		compScreenButtonGroup.add(screen20);
 		compScreenButtonGroup.add(screen25);
 		
-		// Quantity panel
+		// Quantity panel for TV
 		tvQuantityLabel = new JLabel("Quantity");
 		tvQuantityTextField = new JTextField(5);
-		compQuantityTextField = new JTextField(5);
 		tvQuantityPanel = new JPanel(new GridLayout(0,1));
 		tvQuantityPanel.add(tvQuantityLabel);
 		tvQuantityPanel.add(tvQuantityTextField);
 		
+		// Quantity panel for computer
 		compQuantityPanel = new JPanel(new GridLayout(0,1));
 		compQuantityLabel = new JLabel("Quantity");
-		
+		compQuantityTextField = new JTextField(5);
+		compQuantityPanel.add(compQuantityLabel);
+		compQuantityPanel.add(compQuantityTextField);
 		
 		// Add panels to spec panel
 		specTVPanel.add(typePanel);
@@ -159,6 +160,7 @@ public class CheckWindow extends JFrame
 		specTVPanel.add(tvQuantityPanel);
 		
 		specCompPanel.add(compScreenPanel);
+		specCompPanel.add(compQuantityPanel);
 		
 	}
 	
