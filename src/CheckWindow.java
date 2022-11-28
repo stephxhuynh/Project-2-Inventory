@@ -17,9 +17,14 @@ public class CheckWindow extends JFrame
 	private JRadioButton LCDrButton;			// To reference LCD radio button
 	private ButtonGroup typeRadioButtonGroup;	// To reference the type radio button group
 	
+	private JPanel screenSizePanel;				// To reference the size
+	
 	final int WINDOW_WIDTH = 500;
 	final int WINDOW_HEIGHT = 250;
 	
+	/**
+	 * Constructor
+	 */
 	public CheckWindow()
 	{
 		// Create new JFrame
@@ -32,7 +37,7 @@ public class CheckWindow extends JFrame
 		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		
 		// Specify what happens when the close button is clicked.
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		// Main Panel
 		mainPanel = new JPanel();
@@ -67,6 +72,13 @@ public class CheckWindow extends JFrame
 		typeLabel = new JLabel("Type");
 		OLEDrButton = new JRadioButton("OLED");
 		LCDrButton = new JRadioButton("LCD");
+		typePanel.add(typeLabel);
+		typePanel.add(OLEDrButton);
+		typePanel.add(LCDrButton);
+		
+		// Screen size panel inside spec panel
+		
+		
 		// Group type radio buttons
 		typeRadioButtonGroup = new ButtonGroup();
 		typeRadioButtonGroup.add(OLEDrButton);
