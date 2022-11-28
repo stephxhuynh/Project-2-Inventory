@@ -25,7 +25,7 @@ public class CheckWindow extends JFrame
 	private JRadioButton screen40;				// To reference 40 inch tv screen size
 	private JRadioButton screen50;				// To reference 50 inch tv screen size
 	private JRadioButton screen60;				// To reference 60 inch tv screen size
-	private ButtonGroup screenTVButtonGroup;
+	private ButtonGroup screenTVButtonGroup;	// To reference TV screen size radio button group
 	
 	// Comp screen size
 	private JPanel compScreenPanel;				// To reference the computer screen size panel
@@ -34,7 +34,7 @@ public class CheckWindow extends JFrame
 	private JRadioButton screen15;				// To reference 15 inch computer screen size
 	private JRadioButton screen20;				// To reference 20 inch computer screen size
 	private JRadioButton screen25;				// To reference 25 inch computer screen size
-	private ButtonGroup compScreenButtonGroup;	// To  reference computer screen size radio button group
+	private ButtonGroup compScreenButtonGroup;	// To reference computer screen size radio button group
 	
 	// Quantity
 	private JTextField tvQuantityTextField;		// To reference the quantity tv text field
