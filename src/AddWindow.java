@@ -6,6 +6,8 @@ public class AddWindow extends JFrame
 {
 	// Panels
 	private JFrame frame;						// To reference the J frame
+	private JPanel tvCategoryPanel;				// To reference tv category panel
+	private JPanel
 	private JPanel mainPanel;					// To reference the main panel
 	private JPanel tvSpecPanel;					// To reference the Tv specification panel
 	private JPanel compSpecPanel;				// To reference the computer specification panel
@@ -76,7 +78,7 @@ public class AddWindow extends JFrame
 		
 		// Main Panel
 		mainPanel = new JPanel();
-		mainPanel.setLayout(new GridLayout(3, 3, 20, 20));
+		mainPanel.setLayout(new GridLayout(3, 3, 50, 50));
 		
 		buildMainPanel();
 		

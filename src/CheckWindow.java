@@ -1,7 +1,4 @@
 import javax.swing.*;		// Needed for Swing classes
-
-import AddWindow.ButtonListener;
-
 import java.awt.event.*;	// Needed for ActionListener Interface
 import java.awt.*;			// Needed for Color class
 
@@ -74,7 +71,7 @@ public class CheckWindow extends JFrame
 		
 		// Main Panel
 		mainPanel = new JPanel();
-		mainPanel.setLayout(new GridLayout(3, 3, 20, 20));
+		mainPanel.setLayout(new GridLayout(3, 3, 50, 50));
 		
 		buildMainPanel();
 		
@@ -175,7 +172,7 @@ public class CheckWindow extends JFrame
 		specCompPanel.add(compQuantityPanel);
 		
 		// Cancel panel
-		cancelPanel = new JPanel(new FlowLayout());
+		cancelPanel = new JPanel();
 		cancelButton = new JButton("Cancel");
 		cancelButton.setPreferredSize(new Dimension(150, 100));
 		cancelPanel.add(cancelButton);
