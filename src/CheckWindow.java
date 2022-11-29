@@ -7,6 +7,8 @@ public class CheckWindow extends JFrame
 {
 	// Panels
 	private JFrame frame;						// To reference the J frame
+	private JPanel tvCategoryPanel;				// To reference tv category panel
+	private JPanel compCategoryPanel;			// To reference computer category panel
 	private JPanel mainPanel;					// To reference the main panel
 	private JPanel specTVPanel;					// To reference the specification panel
 	private JPanel specCompPanel;
@@ -49,7 +51,7 @@ public class CheckWindow extends JFrame
 	private JButton cancelButton;				// To reference cancel button
 	
 	// Window size
-	final int WINDOW_WIDTH = 1300;
+	final int WINDOW_WIDTH = 1100;
 	final int WINDOW_HEIGHT = 500;
 	
 	/**
@@ -71,12 +73,13 @@ public class CheckWindow extends JFrame
 		
 		// Main Panel
 		mainPanel = new JPanel();
-		mainPanel.setLayout(new GridLayout(3, 3, 50, 50));
+		mainPanel.setLayout(new GridLayout(4, 4));
 		
 		buildMainPanel();
 		
 		frame.add(mainPanel);
-		
+		mainPanel.add(tvCategoryPanel);
+		mainPanel.add(compCategoryPanel);
 		mainPanel.add(TVLabel);
 		mainPanel.add(specTVPanel);
 		mainPanel.add(compLabel);
@@ -91,8 +94,18 @@ public class CheckWindow extends JFrame
 	private void buildMainPanel()
 	{
 		// Category Panel
+		tvCategoryPanel = new JPanel();
+		tvCategoryPanel.setLayout(new BorderLayout());
 		TVLabel = new JLabel("TV");
+		TVLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		TVLabel.setVerticalAlignment(SwingConstants.CENTER);
+		tvCategoryPanel.add(TVLabel, BorderLayout.EAST);
+		compCategoryPanel = new JPanel();
+		compCategoryPanel.setLayout(new BorderLayout());
 		compLabel = new JLabel("Computer");
+		compLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		compLabel.setVerticalAlignment(SwingConstants.CENTER);
+		compCategoryPanel.add(compLabel, BorderLayout.EAST);
 		
 		// Specifications Panel
 		specTVPanel = new JPanel();
