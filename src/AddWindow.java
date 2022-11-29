@@ -52,8 +52,8 @@ public class AddWindow extends JFrame
 	private JButton compUpdateButton;			// To reference computer update button
 	
 	// Cancel
-	private JPanel cancelPanel;					// To reference cancel panel
-	private JButton cancelButton;				// To reference cancel button
+	private JPanel exitPanel;					// To reference cancel panel
+	private JButton exitButton;				// To reference cancel button
 	
 	// Window size
 	final int WINDOW_WIDTH = 1000;
@@ -89,9 +89,9 @@ public class AddWindow extends JFrame
 		mainPanel.add(tvSpecPanel);
 		mainPanel.add(compLabel);
 		mainPanel.add(compSpecPanel);
-		mainPanel.add(cancelPanel);
+		mainPanel.add(exitPanel);
 		
-		cancelButton.addActionListener(new ButtonListener());
+		exitButton.addActionListener(new ButtonListener());
 		
 		frame.setVisible(true);
 	}
@@ -203,10 +203,10 @@ public class AddWindow extends JFrame
 		compSpecPanel.add(compUpdatePanel);
 		
 		// Cancel panel
-		cancelPanel = new JPanel();
-		cancelButton = new JButton("Cancel");
-		cancelButton.setPreferredSize(new Dimension(150, 100));
-		cancelPanel.add(cancelButton);
+		exitPanel = new JPanel();
+		exitButton = new JButton("Exit");
+		exitButton.setPreferredSize(new Dimension(150, 100));
+		exitPanel.add(exitButton);
 	}
 	
 	private class RadioButtonListener implements ActionListener
@@ -225,7 +225,7 @@ public class AddWindow extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
-			if (e.getSource() == cancelButton)
+			if (e.getSource() == exitButton)
 			{
 				frame.dispose();
 				InventoryMainView mWindow = new InventoryMainView();
