@@ -51,7 +51,7 @@ public class CheckWindow extends JFrame
 	private JButton cancelButton;				// To reference cancel button
 	
 	// Window size
-	final int WINDOW_WIDTH = 1100;
+	final int WINDOW_WIDTH = 1000;
 	final int WINDOW_HEIGHT = 500;
 	
 	/**
@@ -95,17 +95,17 @@ public class CheckWindow extends JFrame
 	{
 		// Category Panel
 		tvCategoryPanel = new JPanel();
-		tvCategoryPanel.setLayout(new BorderLayout());
+		tvCategoryPanel.setLayout(new FlowLayout());
 		TVLabel = new JLabel("TV");
 		TVLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		TVLabel.setVerticalAlignment(SwingConstants.CENTER);
-		tvCategoryPanel.add(TVLabel, BorderLayout.EAST);
+		tvCategoryPanel.add(TVLabel);
 		compCategoryPanel = new JPanel();
-		compCategoryPanel.setLayout(new BorderLayout());
+		compCategoryPanel.setLayout(new FlowLayout());
 		compLabel = new JLabel("Computer");
 		compLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		compLabel.setVerticalAlignment(SwingConstants.CENTER);
-		compCategoryPanel.add(compLabel, BorderLayout.EAST);
+		compCategoryPanel.add(compLabel);
 		
 		// Specifications Panel
 		specTVPanel = new JPanel();
