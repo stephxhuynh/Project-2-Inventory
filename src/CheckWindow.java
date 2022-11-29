@@ -1,6 +1,6 @@
 import javax.swing.*;		// Needed for Swing classes
 import java.awt.event.*;	// Needed for ActionListener Interface
-import java.io.IOException;
+import java.io.IOException; // Needed for IO exception
 import java.awt.*;			// Needed for Color class
 
 
