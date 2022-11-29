@@ -7,12 +7,14 @@ public class InventoryMainView extends JFrame
 	private JFrame frame;			// To reference the J frame
 	private JPanel mainPanel;		// To reference the main panel
 	private JPanel buttonPanel;		// To reference the button panel
+	private JPanel addPanel;		// To reference the add panel
+	private JPanel checkPanel;		// To reference the check panel
 	private JPanel infoPanel;		// To reference the info panel
 	private JButton addButton;		// To reference an add button
 	private JButton checkButton;	// To reference a check button
 	
-	final int WINDOW_WIDTH = 1000;		// Window width in pixels
-	final int WINDOW_HEIGHT = 500;		// Window height in pixels
+	final int WINDOW_WIDTH = 1200;		// Window width in pixels
+	final int WINDOW_HEIGHT = 700;		// Window height in pixels
 	
 	/**
 	 * Constructor
@@ -49,11 +51,17 @@ public class InventoryMainView extends JFrame
 	{
 		// Button Panel
 		buttonPanel = new JPanel();
+		addPanel = new JPanel();
+		checkPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(2, 1));
 		addButton = new JButton("Add");
+		addButton.setPreferredSize(new Dimension(200, 200));
 		checkButton = new JButton("Check");
-		buttonPanel.add(addButton);
-		buttonPanel.add(checkButton);
+		checkButton.setPreferredSize(new Dimension(200, 200));
+		addPanel.add(addButton);
+		checkPanel.add(checkButton);
+		buttonPanel.add(addPanel);
+		buttonPanel.add(checkPanel);
 		
 		addButton.addActionListener(new ButtonListener());
 		checkButton.addActionListener(new ButtonListener());

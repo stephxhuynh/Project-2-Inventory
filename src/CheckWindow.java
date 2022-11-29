@@ -97,6 +97,7 @@ public class CheckWindow extends JFrame
 		tvCategoryPanel = new JPanel();
 		tvCategoryPanel.setLayout(new FlowLayout());
 		TVLabel = new JLabel("TV");
+		TVLabel.setPreferredSize(new Dimension(100, 100));
 		TVLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		TVLabel.setVerticalAlignment(SwingConstants.CENTER);
 		tvCategoryPanel.add(TVLabel);
@@ -119,13 +120,13 @@ public class CheckWindow extends JFrame
 		typeLabel = new JLabel("Type");
 		OLEDrButton = new JRadioButton("OLED");
 		LCDrButton = new JRadioButton("LCD");
-		typePanel.add(typeLabel);
-		typePanel.add(OLEDrButton);
-		typePanel.add(LCDrButton);
 		// Group type radio buttons
 		typeRadioButtonGroup = new ButtonGroup();
 		typeRadioButtonGroup.add(OLEDrButton);
 		typeRadioButtonGroup.add(LCDrButton);
+		typePanel.add(typeLabel);
+		typePanel.add(OLEDrButton);
+		typePanel.add(LCDrButton);
 		
 		// Screen size panel for TV inside spec panel
 		tvScreenPanel = new JPanel();
@@ -134,15 +135,15 @@ public class CheckWindow extends JFrame
 		screen40 = new JRadioButton("40");
 		screen50 = new JRadioButton("50");
 		screen60 = new JRadioButton("60");
-		tvScreenPanel.add(tvScreenLabel);
-		tvScreenPanel.add(screen40);
-		tvScreenPanel.add(screen50);
-		tvScreenPanel.add(screen60);
 		// Group TV screen radio buttons
 		screenTVButtonGroup = new ButtonGroup();
 		screenTVButtonGroup.add(screen40);
 		screenTVButtonGroup.add(screen50);
 		screenTVButtonGroup.add(screen60);
+		tvScreenPanel.add(tvScreenLabel);
+		tvScreenPanel.add(screen40);
+		tvScreenPanel.add(screen50);
+		tvScreenPanel.add(screen60);
 		
 		// Screen size panel for Computer
 		compScreenPanel = new JPanel();
