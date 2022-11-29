@@ -82,30 +82,42 @@ public class InventoryMainView extends JFrame
 		
 		// Info Panel
 		infoPanel = new JPanel();
-
-		try
-		{
-			FileReader reader = new FileReader("inventoryInfo.txt");
-			// Create a scanner object from FileReader
-			Scanner s = new Scanner(reader);
-			// Create a string that will store all the text in the text file
-			String storeAllString = "";
-			
-			// Put all text from text file into created string
-			while (s.hasNextLine())
-			{
-				String temp = s.nextLine();
-				storeAllString = storeAllString + temp;
-			}
-			textInput = new JTextArea(storeAllString);
-			JScrollPane scrollPane = new JScrollPane(textInput);
-			scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-		}
-		catch (FileNotFoundException e)
-		{
-			JOptionPane.showMessageDialog(InventoryMainView.this, "File not found.");
-		}
-		infoPanel.add(textInput);
+		// Data to be displayed in the JTable
+		String[][] data = {
+				{"OLED", "TV", "40", "25", "1", "1"},
+				{"NA", "COMPUTER", "20", "23", "2", "2"}
+		};
+		
+		// Column Names
+		String[] columnNames = {"Type", "Category", "Screen Size", "Quantity", "Aisle", "Shelf"};
+		// Initialize table
+		table = new JTable(data, columnNames);
+		table.setBounds(30, 40, 700, 500);
+		scrollPane = new JScrollPane(table);
+//		try
+//		{
+//			FileReader reader = new FileReader("inventoryInfo.txt");
+//			// Create a scanner object from FileReader
+//			Scanner s = new Scanner(reader);
+//			// Create a string that will store all the text in the text file
+//			String storeAllString = "";
+//			
+//			// Put all text from text file into created string
+//			while (s.hasNextLine())
+//			{
+//				String temp = s.nextLine();
+//				storeAllString = storeAllString + temp;
+//			}
+//			textInput = new JTextArea(storeAllString);
+//			JScrollPane scrollPane = new JScrollPane(textInput);
+//			scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+//		}
+//		catch (FileNotFoundException e)
+//		{
+//			JOptionPane.showMessageDialog(InventoryMainView.this, "File not found.");
+//		}
+//		infoPanel.add(textInput);
+		infoPanel.add(scrollPane);
 	}
 	
 	private class ButtonListener implements ActionListener

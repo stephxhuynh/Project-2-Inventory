@@ -735,7 +735,6 @@ public class InventorySystem
 							+ inventory.get(i).getQuantity() + " "
 							+ inventory.get(i).getLocation());
 				}
-
 			}
 		}
 		catch (FileNotFoundException e)
