@@ -47,8 +47,8 @@ public class CheckWindow extends JFrame
 	private JLabel compQuantityLabel;			// To reference the computer quantity label
 	
 	// Cancel
-	private JPanel cancelPanel;					// To reference cancel panel
-	private JButton cancelButton;				// To reference cancel button
+	private JPanel exitPanel;					// To reference cancel panel
+	private JButton exitButton;				// To reference cancel button
 	
 	// Window size
 	final int WINDOW_WIDTH = 1000;
@@ -84,9 +84,9 @@ public class CheckWindow extends JFrame
 		mainPanel.add(specTVPanel);
 		mainPanel.add(compLabel);
 		mainPanel.add(specCompPanel);
-		mainPanel.add(cancelPanel);
+		mainPanel.add(exitPanel);
 		
-		cancelButton.addActionListener(new ButtonListener());
+		exitButton.addActionListener(new ButtonListener());
 		
 		frame.setVisible(true);
 	}
@@ -186,10 +186,10 @@ public class CheckWindow extends JFrame
 		specCompPanel.add(compQuantityPanel);
 		
 		// Cancel panel
-		cancelPanel = new JPanel();
-		cancelButton = new JButton("Cancel");
-		cancelButton.setPreferredSize(new Dimension(150, 100));
-		cancelPanel.add(cancelButton);
+		exitPanel = new JPanel();
+		exitButton = new JButton("Exit");
+		exitButton.setPreferredSize(new Dimension(150, 100));
+		exitPanel.add(exitButton);
 	}
 	
 	private class RadioButtonListener implements ActionListener
@@ -208,7 +208,7 @@ public class CheckWindow extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
-			if (e.getSource() == cancelButton)
+			if (e.getSource() == exitButton)
 			{
 				frame.dispose();
 				InventoryMainView mWindow = new InventoryMainView();
