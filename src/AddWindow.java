@@ -1,5 +1,6 @@
 import javax.swing.*;		// Needed for Swing classes
 import java.awt.event.*;	// Needed for ActionListener Interface
+import java.util.ArrayList;
 import java.awt.*;			// Needed for Color class
 
 public class AddWindow extends JFrame
@@ -59,11 +60,19 @@ public class AddWindow extends JFrame
 	final int WINDOW_WIDTH = 1000;
 	final int WINDOW_HEIGHT = 500;
 	
+	// Inventory System object and info
+	private InventorySystem system;
+	private String tvType = "";
+	private int tvSize;
+	private int quantity;
+	private ArrayList<Item> inventory;
+	
 	/**
 	 * Constructor
 	 */
-	public AddWindow()
+	public AddWindow(InventorySystem system)
 	{
+		this.system = system;
 		// Create new JFrame
 		frame = new JFrame();
 		
@@ -91,7 +100,7 @@ public class AddWindow extends JFrame
 		mainPanel.add(compSpecPanel);
 		mainPanel.add(exitPanel);
 		
-		exitButton.addActionListener(new ButtonListener());
+		exitButton.addActionListener(new exitButtonListener());
 		
 		frame.setVisible(true);
 	}
@@ -207,20 +216,69 @@ public class AddWindow extends JFrame
 		exitButton = new JButton("Exit");
 		exitButton.setPreferredSize(new Dimension(150, 100));
 		exitPanel.add(exitButton);
+		
+		// Button Listeners
+		OLEDrButton.addActionListener(new tvTypeRadioListener());
+		LCDrButton.addActionListener(new tvTypeRadioListener());
+		
+		screen40.addActionListener(new tvScreenRadioListener());
+		screen50.addActionListener(new tvScreenRadioListener());
+		screen60.addActionListener(new tvScreenRadioListener());
+		
+		
+		
 	}
 	
-	private class RadioButtonListener implements ActionListener
+	private class tvTypeRadioListener implements ActionListener
 	{
 		@Override
 		public void actionPerformed(ActionEvent e) 
 		{
 			if (e.getSource() == OLEDrButton)
 			{
+				tvType = "OLED";
+			}
+			if(e.getSource() == LCDrButton)
+			{
+				tvType = "LCD";
 			}
 		}
 	}
 	
-	private class ButtonListener implements ActionListener
+	private class tvScreenRadioListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			if (e.getSource() == screen40)
+				tvSize = 40;
+			if (e.getSource() == screen50)
+				tvSize = 50;
+			if (e.getSource() == screen60)
+				tvSize = 60;
+			
+		}
+	}
+	
+	
+	private class tvAddListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			String input = "";
+			input = tvQuantityTextField.getText();
+			quantity = Integer.parseInt(input);
+			
+			system.addTV(system.getList(), input, null);
+			
+		}
+		
+	}
+	
+	private class exitButtonListener implements ActionListener
 	{
 		@Override
 		public void actionPerformed(ActionEvent e)
@@ -228,7 +286,8 @@ public class AddWindow extends JFrame
 			if (e.getSource() == exitButton)
 			{
 				frame.dispose();
-				InventoryMainView mWindow = new InventoryMainView();
+				//added system for constructor
+				InventoryMainView mWindow = new InventoryMainView(system);
 			}
 		}
 	}
@@ -237,6 +296,13 @@ public class AddWindow extends JFrame
 	{
 		// TODO Auto-generated method stub
 
+	}
+	
+	
+	
+	public static void getInventory()
+	{
+		
 	}
 
 }
