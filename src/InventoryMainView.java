@@ -1,17 +1,22 @@
 import javax.swing.*;		// Needed for Swing classes
 import java.awt.event.*;	// Needed for ActionListener Interface
 import java.awt.*;			// Needed for Color class
+import java.io.*;  			// Needed for file reading
+import java.util.*;			// Needed for file reading
 
 public class InventoryMainView extends JFrame
 {
-	private JFrame frame;			// To reference the J frame
-	private JPanel mainPanel;		// To reference the main panel
-	private JPanel buttonPanel;		// To reference the button panel
-	private JPanel addPanel;		// To reference the add panel
-	private JPanel checkPanel;		// To reference the check panel
-	private JPanel infoPanel;		// To reference the info panel
-	private JButton addButton;		// To reference an add button
-	private JButton checkButton;	// To reference a check button
+	private JFrame frame;				// To reference the J frame
+	private JPanel mainPanel;			// To reference the main panel
+	private JPanel buttonPanel;			// To reference the button panel
+	private JPanel addPanel;			// To reference the add panel
+	private JPanel checkPanel;			// To reference the check panel
+	private JPanel infoPanel;			// To reference the info panel
+	private JButton addButton;			// To reference an add button
+	private JButton checkButton;		// To reference a check button
+	private JTextArea textInput;		// To reference text area
+	private JTable table;				// to reference table
+	private JScrollPane scrollPane;		// to reference a scroll pane
 	
 	final int WINDOW_WIDTH = 1200;		// Window width in pixels
 	final int WINDOW_HEIGHT = 700;		// Window height in pixels
@@ -22,8 +27,12 @@ public class InventoryMainView extends JFrame
 	
 	/**
 	 * Constructor
+	 * @throws IOException 
 	 */
-	public InventoryMainView(InventorySystem system)
+
+	//public InventoryMainView(InventorySystem system)
+
+	public InventoryMainView() throws IOException
 	{	
 		view = this;
 		// Create new JFrame
@@ -47,12 +56,12 @@ public class InventoryMainView extends JFrame
 		frame.add(mainPanel);
 		
 		mainPanel.add(buttonPanel, BorderLayout.WEST);
-		mainPanel.add(infoPanel, BorderLayout.EAST);
+		mainPanel.add(infoPanel, BorderLayout.CENTER);
 		
 		frame.setVisible(true);
 	}
 	
-	private void buildMainPanel()
+	private void buildMainPanel() throws IOException
 	{
 		// Button Panel
 		buttonPanel = new JPanel();
@@ -73,7 +82,30 @@ public class InventoryMainView extends JFrame
 		
 		// Info Panel
 		infoPanel = new JPanel();
-		infoPanel.setLayout(new FlowLayout());
+
+		try
+		{
+			FileReader reader = new FileReader("inventoryInfo.txt");
+			// Create a scanner object from FileReader
+			Scanner s = new Scanner(reader);
+			// Create a string that will store all the text in the text file
+			String storeAllString = "";
+			
+			// Put all text from text file into created string
+			while (s.hasNextLine())
+			{
+				String temp = s.nextLine();
+				storeAllString = storeAllString + temp;
+			}
+			textInput = new JTextArea(storeAllString);
+			JScrollPane scrollPane = new JScrollPane(textInput);
+			scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		}
+		catch (FileNotFoundException e)
+		{
+			JOptionPane.showMessageDialog(InventoryMainView.this, "File not found.");
+		}
+		infoPanel.add(textInput);
 	}
 	
 	private class ButtonListener implements ActionListener
@@ -94,7 +126,7 @@ public class InventoryMainView extends JFrame
 		}
 	}
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
 		new InventoryMainView(new InventorySystem());
 	}
