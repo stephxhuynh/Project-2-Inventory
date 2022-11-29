@@ -6,10 +6,10 @@ public class AddWindow extends JFrame
 {
 	// Panels
 	private JFrame frame;						// To reference the J frame
-	private JPanel tvCategoryPanel;				// To reference tv category panel
+	private JPanel tvCategoryPanel;				// To reference TV category panel
 	private JPanel compCategoryPanel;			// To reference computer category panel
 	private JPanel mainPanel;					// To reference the main panel
-	private JPanel tvSpecPanel;					// To reference the Tv specification panel
+	private JPanel tvSpecPanel;					// To reference the TV specification panel
 	private JPanel compSpecPanel;				// To reference the computer specification panel
 	private JPanel typePanel;					// To reference the TV type panel
 	
