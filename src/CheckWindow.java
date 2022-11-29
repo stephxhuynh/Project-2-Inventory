@@ -1,5 +1,6 @@
 import javax.swing.*;		// Needed for Swing classes
 import java.awt.event.*;	// Needed for ActionListener Interface
+import java.io.IOException;
 import java.awt.*;			// Needed for Color class
 
 
@@ -211,7 +212,15 @@ public class CheckWindow extends JFrame
 			if (e.getSource() == exitButton)
 			{
 				frame.dispose();
-				InventoryMainView mWindow = new InventoryMainView();
+				try
+				{
+					InventoryMainView mWindow = new InventoryMainView();
+				}
+				catch (IOException e1)
+				{
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		}
 	}

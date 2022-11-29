@@ -1,5 +1,6 @@
 import javax.swing.*;		// Needed for Swing classes
 import java.awt.event.*;	// Needed for ActionListener Interface
+import java.io.IOException;
 import java.awt.*;			// Needed for Color class
 
 public class AddWindow extends JFrame
@@ -160,7 +161,7 @@ public class AddWindow extends JFrame
 		compScreenPanel.add(screen15);
 		compScreenPanel.add(screen20);
 		compScreenPanel.add(screen25);
-		// Group Comp screen radio buttons
+		// Group Computer screen radio buttons
 		compScreenButtonGroup = new ButtonGroup();
 		compScreenButtonGroup.add(screen15);
 		compScreenButtonGroup.add(screen20);
@@ -228,7 +229,15 @@ public class AddWindow extends JFrame
 			if (e.getSource() == exitButton)
 			{
 				frame.dispose();
-				InventoryMainView mWindow = new InventoryMainView();
+				try
+				{
+					InventoryMainView mWindow = new InventoryMainView();
+				}
+				catch (IOException e1)
+				{
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		}
 	}
