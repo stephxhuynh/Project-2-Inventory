@@ -67,14 +67,16 @@ public class AddWindow extends JFrame
 	private String tvType = "";
 	private int tvSize;
 	private int quantity;
-	private ArrayList<Item> inventory;
+//	private ArrayList<Item> inventory;
 	
 	/**
 	 * Constructor
 	 */
-	public AddWindow(InventorySystem system)
+//	public AddWindow(InventorySystem system, ArrayList<Item> inventory)
+	public AddWindow()
 	{
 		this.system = system;
+		
 		// Create new JFrame
 		frame = new JFrame();
 		
@@ -273,8 +275,15 @@ public class AddWindow extends JFrame
 			input = tvQuantityTextField.getText();
 			quantity = Integer.parseInt(input);
 			
-			system.addTV(system.getList(), input, null);
-			
+//			if (tvType == "OLED")
+//			{
+//				system.getList().add(new TV("TV", tvSize, tvType));
+//			}
+//			
+//			if (tvType == "LCD")
+//			{
+//				system.getList().add(new TV("TV", tvSize, tvType));
+//			}
 		}
 		
 	}
@@ -288,7 +297,7 @@ public class AddWindow extends JFrame
 			{
 				frame.dispose();
 				//added system for constructor
-				//InventoryMainView mWindow = new InventoryMainView(system);
+//				InventoryMainView mWindow = new InventoryMainView(system);
 
 				try
 				{

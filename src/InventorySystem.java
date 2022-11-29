@@ -823,10 +823,17 @@ public class InventorySystem
 
 	}
 	
+	
+	/**
+	 * get ArrayList of inventory system
+	 * @return array list of items
+	 */
 	public ArrayList<Item> getList()
 	{
 		
 		return inventory;
 	}
+	
+	
 
 }
