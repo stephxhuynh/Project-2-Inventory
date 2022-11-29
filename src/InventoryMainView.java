@@ -128,6 +128,7 @@ public class InventoryMainView extends JFrame
 	
 	public static void main(String[] args) throws IOException
 	{
-		new InventoryMainView(new InventorySystem());
+		//new InventoryMainView(new InventorySystem());
+		new InventoryMainView();
 	}
 }
