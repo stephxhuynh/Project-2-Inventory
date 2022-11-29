@@ -21,13 +21,21 @@ public class InventoryMainView extends JFrame
 	final int WINDOW_WIDTH = 1200;		// Window width in pixels
 	final int WINDOW_HEIGHT = 700;		// Window height in pixels
 	
+	// Model/View fields
+	private InventoryMainView view;
+	private InventorySystem system;
+	
 	/**
 	 * Constructor
 	 * @throws IOException 
 	 */
+
+	//public InventoryMainView(InventorySystem system)
+
 	public InventoryMainView() throws IOException
 	{	
-		// Crete new JFrame
+		view = this;
+		// Create new JFrame
 		frame = new JFrame();
 		
 		// Set the title.
@@ -113,13 +121,13 @@ public class InventoryMainView extends JFrame
 			if(e.getSource() == addButton)
 			{
 				frame.dispose();
-				AddWindow aWindow = new AddWindow();
+				AddWindow aWindow = new AddWindow(system);
 			}
 		}
 	}
 	
 	public static void main(String[] args) throws IOException
 	{
-		new InventoryMainView();
+		new InventoryMainView(new InventorySystem());
 	}
 }

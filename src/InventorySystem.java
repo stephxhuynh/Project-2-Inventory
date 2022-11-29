@@ -34,30 +34,37 @@ public class InventorySystem
 	// Global constraint variable to keep track of index of the inventory
 	// arraylist
 	static int count = 0;
+	
+	private ArrayList<Item> inventory;
+	
+	public InventorySystem()
+	{
+		inventory = new ArrayList<Item>();
+	}
 
 	public static void main(String[] args) throws IOException
 	{
 
 		// arrayList of Item - can consist of TV or Computer objects that we
 		// make
-		ArrayList<Item> inventory = new ArrayList<Item>();
+//		ArrayList<Item> inventory = new ArrayList<Item>();
 
 		// read any existing inventory
-		readFromFile("inventoryInfo.txt", inventory);
-
-		// opens stream for input
-		Scanner keyboard = new Scanner(System.in);
-
-		// print Menu
-		printMenu(inventory, keyboard);
-
-		writeToFile("inventoryInfo.txt", inventory);
-
-		printInventory(inventory);
-
-		printQuantity(inventory);
-
-		keyboard.close();
+//		readFromFile("inventoryInfo.txt", inventory);
+//
+//		// opens stream for input
+//		Scanner keyboard = new Scanner(System.in);
+//
+//		// print Menu
+//		printMenu(inventory, keyboard);
+//
+//		writeToFile("inventoryInfo.txt", inventory);
+//
+//		printInventory(inventory);
+//
+//		printQuantity(inventory);
+//
+//		keyboard.close();
 	}
 
 	/**
@@ -815,6 +822,12 @@ public class InventorySystem
 			}
 		}
 
+	}
+	
+	public ArrayList<Item> getList()
+	{
+		
+		return inventory;
 	}
 
 }
