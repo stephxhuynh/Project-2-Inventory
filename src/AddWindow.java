@@ -72,7 +72,8 @@ public class AddWindow extends JFrame
 	/**
 	 * Constructor
 	 */
-	public AddWindow(InventorySystem system, ArrayList<Item> inventory)
+//	public AddWindow(InventorySystem system, ArrayList<Item> inventory)
+	public AddWindow()
 	{
 		this.system = system;
 		
@@ -274,15 +275,15 @@ public class AddWindow extends JFrame
 			input = tvQuantityTextField.getText();
 			quantity = Integer.parseInt(input);
 			
-			if (tvType == "OLED")
-			{
-				system.getList().add(new TV("TV", tvSize, tvType));
-			}
-			
-			if (tvType == "LCD")
-			{
-				system.getList().add(new TV("TV", tvSize, tvType));
-			}
+//			if (tvType == "OLED")
+//			{
+//				system.getList().add(new TV("TV", tvSize, tvType));
+//			}
+//			
+//			if (tvType == "LCD")
+//			{
+//				system.getList().add(new TV("TV", tvSize, tvType));
+//			}
 		}
 		
 	}
@@ -296,11 +297,11 @@ public class AddWindow extends JFrame
 			{
 				frame.dispose();
 				//added system for constructor
-				//InventoryMainView mWindow = new InventoryMainView(system);
+//				InventoryMainView mWindow = new InventoryMainView(system);
 
 				try
 				{
-					InventoryMainView mWindow = new InventoryMainView(system);
+					InventoryMainView mWindow = new InventoryMainView();
 				}
 				catch (IOException e1)
 				{

@@ -33,7 +33,7 @@ public class InventoryMainView extends JFrame
 
 	//public InventoryMainView(InventorySystem system)
 
-	public InventoryMainView(InventorySystem system) throws IOException
+	public InventoryMainView() throws IOException
 	{	
 		view = this;
 		
@@ -125,14 +125,15 @@ public class InventoryMainView extends JFrame
 			if(e.getSource() == addButton)
 			{
 				frame.dispose();
-				AddWindow aWindow = new AddWindow(system, inventory);
+//				AddWindow aWindow = new AddWindow(system, inventory);
+				AddWindow aWindow = new AddWindow();
 			}
 		}
 	}
 	
 	public static void main(String[] args) throws IOException
 	{
-		new InventoryMainView(new InventorySystem());
-//		new InventoryMainView();
+//		new InventoryMainView(new InventorySystem());
+		new InventoryMainView();
 	}
 }
