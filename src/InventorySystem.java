@@ -126,8 +126,6 @@ public class InventorySystem
 			{
 				addTV(category, keyboard);
 
-			
-
 				keyboard.nextLine(); // clear input
 				choice = askContinue(keyboard);
 
@@ -230,7 +228,7 @@ public class InventorySystem
 		size = askTVSize(keyboard);
 
 		// checks if item exists and adds quantities to existing or new item
-		ifItemExists(category, size, type, keyboard);
+//		ifItemExists(category, size, type, keyboard);
 
 	}
 
@@ -249,7 +247,7 @@ public class InventorySystem
 
 		// "NA" passed because computer does not have type
 		// checks if item exists and adds quantities to existing or new item
-		ifItemExists(category, size, "NA", keyboard);
+//		ifItemExists(category, size, "NA", keyboard);
 
 	}
 
@@ -439,31 +437,31 @@ public class InventorySystem
 	 * @param type      to compare
 	 *
 	 */
-	public void searchTVInventory(String category, int size, String type)
-	{
-		boolean exists = false;
-		int quantity = 0;
-		for (int i = 0; i < inventory.size(); i++)
-		{
-			if (inventory.get(i).getCategory().equals(category))
-			{
-				if (inventory.get(i).getScreenSize() == size)
-					if (((TV) inventory.get(i)).getType().equals(type))
-				{
-					exists = true;
-					quantity = inventory.get(i).getQuantity();
-				}
-
-			}
-		}
-		if (exists == true)
-		{
-			System.out.println("\nQuantity of " + category + " " + size + "in "
-					+ type + " is:\t" + quantity);
-		}
-		else System.out.println("Item does not exist");
-
-	}
+//	public void searchTVInventory(String category, int size, String type)
+//	{
+//		boolean exists = false;
+//		int quantity = 0;
+//		for (int i = 0; i < inventory.size(); i++)
+//		{
+//			if (inventory.get(i).getCategory().equals(category))
+//			{
+//				if (inventory.get(i).getScreenSize() == size)
+//					if (((TV) inventory.get(i)).getType().equals(type))
+//				{
+//					exists = true;
+//					quantity = inventory.get(i).getQuantity();
+//				}
+//
+//			}
+//		}
+//		if (exists == true)
+//		{
+//			System.out.println("\nQuantity of " + category + " " + size + "in "
+//					+ type + " is:\t" + quantity);
+//		}
+//		else System.out.println("Item does not exist");
+//
+//	}
 
 	/**
 	 * Search for Computer item in inventory to find quantity if item exists in
@@ -475,24 +473,24 @@ public class InventorySystem
 	 * @param size
 	 * @return int quantity
 	 */
-	public void searchComputerInventory(String category, int size)
-	{
-		boolean exists = false;
-		int quantity = 0;
-		for (int i = 0; i < inventory.size(); i++)
-		{
-			if (inventory.get(i).getCategory().equals(category))
-				if (inventory.get(i).getScreenSize() == size)
-			{
-				exists = true;
-				quantity = inventory.get(i).getQuantity();
-			}
-		}
-		if (exists == true) System.out.println("\nQuantity of " + category + " "
-				+ size + "in is:\t" + quantity);
-		else System.out.println("Item does not exist");
-
-	}
+//	public void searchComputerInventory(String category, int size)
+//	{
+//		boolean exists = false;
+//		int quantity = 0;
+//		for (int i = 0; i < inventory.size(); i++)
+//		{
+//			if (inventory.get(i).getCategory().equals(category))
+//				if (inventory.get(i).getScreenSize() == size)
+//			{
+//				exists = true;
+//				quantity = inventory.get(i).getQuantity();
+//			}
+//		}
+//		if (exists == true) System.out.println("\nQuantity of " + category + " "
+//				+ size + "in is:\t" + quantity);
+//		else System.out.println("Item does not exist");
+//
+//	}
 
 	/**
 	 * ask user for quantity they want to add
@@ -756,26 +754,95 @@ public class InventorySystem
 	 * @param type
 	 * @param keyboard
 	 */
-	public void ifItemExists(String category,
-			int size, String type, Scanner keyboard)
+//	public void ifItemExists(String category,
+//			int size, String type, Scanner keyboard)
+//	{
+//		boolean exists = false;
+//		int indexExist = -1;
+//		int quantity = 0;
+//
+//		// search through inventory ArrayList
+//		// if variables match, item exists, and save index of where item exists
+//		for (int i = 0; i < inventory.size(); i++)
+//		{
+//			if (inventory.get(i) instanceof TV)
+//			{
+//				if (((TV) inventory.get(i)).getType().equals(type))
+//					if (inventory.get(i).getScreenSize() == size)
+//				{
+//					exists = true;
+//					indexExist = i;
+//				}
+//
+//			}
+//			else if (inventory.get(i) instanceof Computer)
+//			{
+//				if (inventory.get(i).getScreenSize() == size)
+//				{
+//					exists = true;
+//					indexExist = i;
+//				}
+//			}
+//		}
+//
+//		// if item exists, add quantity of items to that item
+//		if (exists == true)
+//		{
+//			System.out.println("\nItem already exists. Simply add quantity.");
+//			quantity = askQuantity(keyboard);
+//			quantity = quantity + inventory.get(indexExist).getQuantity();
+//			inventory.get(indexExist).setQuantity(quantity);
+//		}
+//		// else if inventory does not exist, create new item/object depending on
+//		// specified category
+//		else if (exists == false)
+//		{
+//			if (category.equals("TV"))
+//			{
+//				inventory.add(new TV(category, size, type));
+//				quantity = askQuantity(keyboard);
+//				inventory.get(count).setQuantity(quantity);
+//				//increasing count to index through arraylist for new items
+//				count++;
+//			}
+//			else
+//			{
+//				inventory.add(new Computer(category, size));
+//				quantity = askQuantity(keyboard);
+//				inventory.get(count).setQuantity(quantity);
+//				//increasing count to index through arraylist for new items
+//				count++;
+//			}
+//		}
+//
+//	}
+	
+	/**
+	 * GUI IMPLEMENTATION:
+	 * Check if item exists before adding to inventory
+	 * If it does exist, update quantity
+	 * If it does not, add new item to arraylist
+	 * @param category
+	 * @param size
+	 * @param type
+	 * @param quantity
+	 */
+	public void ifItemExists(String category, int size, String type, int quantity)
 	{
 		boolean exists = false;
 		int indexExist = -1;
-		int quantity = 0;
-
-		// search through inventory ArrayList
-		// if variables match, item exists, and save index of where item exists
+		
+		
 		for (int i = 0; i < inventory.size(); i++)
 		{
 			if (inventory.get(i) instanceof TV)
 			{
 				if (((TV) inventory.get(i)).getType().equals(type))
 					if (inventory.get(i).getScreenSize() == size)
-				{
-					exists = true;
-					indexExist = i;
-				}
-
+					{
+						exists = true;
+						indexExist = i;
+					}
 			}
 			else if (inventory.get(i) instanceof Computer)
 			{
@@ -790,8 +857,7 @@ public class InventorySystem
 		// if item exists, add quantity of items to that item
 		if (exists == true)
 		{
-			System.out.println("\nItem already exists. Simply add quantity.");
-			quantity = askQuantity(keyboard);
+			System.out.println("\nItem already exists. Quantity has been updated");
 			quantity = quantity + inventory.get(indexExist).getQuantity();
 			inventory.get(indexExist).setQuantity(quantity);
 		}
@@ -802,7 +868,6 @@ public class InventorySystem
 			if (category.equals("TV"))
 			{
 				inventory.add(new TV(category, size, type));
-				quantity = askQuantity(keyboard);
 				inventory.get(count).setQuantity(quantity);
 				//increasing count to index through arraylist for new items
 				count++;
@@ -810,7 +875,6 @@ public class InventorySystem
 			else
 			{
 				inventory.add(new Computer(category, size));
-				quantity = askQuantity(keyboard);
 				inventory.get(count).setQuantity(quantity);
 				//increasing count to index through arraylist for new items
 				count++;
@@ -819,6 +883,58 @@ public class InventorySystem
 
 	}
 	
+	/**
+	 * GUI IMPLEMENTATION
+	 * search TV inventory and get quantity
+	 * @param category
+	 * @param size
+	 * @param type
+	 * @return int of quantity
+	 */
+	public int searchTVInventory(String category, int size, String type)
+	{
+		boolean exists = false;
+		int quantity = 0;
+		for (int i = 0; i < inventory.size(); i++)
+		{
+			if (inventory.get(i).getCategory().equals(category))
+			{
+				if (inventory.get(i).getScreenSize() == size)
+					if (((TV) inventory.get(i)).getType().equals(type))
+				{
+					exists = true;
+					quantity = inventory.get(i).getQuantity();
+				}
+
+			}
+		}
+		return quantity;
+
+
+	}
+	
+	/**
+	 * GUI IMPLEMENTATION
+	 * Search for computer in inventory and get quantity
+	 * @param category
+	 * @param size
+	 * @return int of quantity
+	 */
+	public int searchComputerInventory(String category, int size)
+	{
+		boolean exists = false;
+		int quantity = 0;
+		for (int i = 0; i < inventory.size(); i++)
+		{
+			if (inventory.get(i).getCategory().equals(category))
+				if (inventory.get(i).getScreenSize() == size)
+			{
+				exists = true;
+				quantity = inventory.get(i).getQuantity();
+			}
+		}
+		return quantity;
+	}
 	
 	/**
 	 * get ArrayList of inventory system
@@ -826,7 +942,6 @@ public class InventorySystem
 	 */
 	public ArrayList<Item> getList()
 	{
-		
 		return inventory;
 	}
 	

@@ -131,8 +131,9 @@ public class InventoryMainView extends JFrame
 			if (e.getSource() == checkButton)
 			{
 				frame.dispose();
-				CheckWindow checkWindow = new CheckWindow();
+				CheckWindow checkWindow = new CheckWindow(system);
 			}
+			
 			if(e.getSource() == addButton)
 			{
 				frame.dispose();

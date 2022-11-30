@@ -184,6 +184,17 @@ public class AddWindow extends JFrame
 		// Quantity panel for TV
 		tvQuantityLabel = new JLabel("Quantity");
 		tvQuantityTextField = new JTextField(5);
+		tvQuantityTextField.addKeyListener(new KeyAdapter()
+		{
+			public void keyPressed(KeyEvent e)
+			{
+				char input = e.getKeyChar();
+				if ((input >= '0') || (input <= '9') && (input != '\b'))
+				{
+					e.consume();
+				}
+			}
+		});
 		tvQuantityPanel = new JPanel(new FlowLayout());
 		tvQuantityPanel.add(tvQuantityLabel);
 		tvQuantityPanel.add(tvQuantityTextField);
@@ -205,6 +216,7 @@ public class AddWindow extends JFrame
 		compUpdateButton = new JButton("Add/Modify");
 		compUpdateButton.setPreferredSize(new Dimension(100, 100));
 		compUpdatePanel.add(compUpdateButton);
+//		((JLabel) compUpdatePanel.add(compUpdateButton)).setHorizontalAlignment(SwingConstants.RIGHT);
 		
 		// Top TV spec panel
 		tvSpecPanel.add(typePanel);
@@ -212,7 +224,8 @@ public class AddWindow extends JFrame
 		tvSpecPanel.add(tvQuantityPanel);
 		tvSpecPanel.add(tvUpdatePanel);
 		
-		// Botton Computer spec panel
+		
+		// Bottom Computer spec panel
 		compSpecPanel.add(compScreenPanel);
 		compSpecPanel.add(compQuantityPanel);
 		compSpecPanel.add(compUpdatePanel);
@@ -284,19 +297,27 @@ public class AddWindow extends JFrame
 			input = tvQuantityTextField.getText();
 			quantity = Integer.parseInt(input);
 			
-			if (tvType == "OLED")
-			{
-				system.getList().add(new TV("TV", tvSize, tvType));
-				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
-						+ " TV Size: " + tvSize + " Type: " + tvType + " added");
-			}
+//			if (tvType == "OLED")
+//			{
+//				system.getList().add(new TV("TV", tvSize, tvType));
+//				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
+//						+ " TV Size: " + tvSize + " Type: " + tvType + " added");
+//			}
+//			
+//			if (tvType == "LCD")
+//			{
+//				system.getList().add(new TV("TV", tvSize, tvType));
+//				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
+//						+ "\t TV Size: " + tvSize + " Type: " + tvType + " added");
+//			}
 			
-			if (tvType == "LCD")
-			{
-				system.getList().add(new TV("TV", tvSize, tvType));
-				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
-						+ "\t TV Size: " + tvSize + " Type: " + tvType + " added");
-			}
+			system.ifItemExists("TV", tvSize, tvType, quantity);
+//			system.getList().add(new TV("TV", tvSize, tvType));
+//			system.getList().get(InventorySystem.count).setQuantity(quantity);
+//			InventorySystem.count++;
+			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
+					+ "\t TV Size: " + tvSize + " Type: " + tvType + " added");
+			
 		}
 		
 	}
@@ -327,8 +348,10 @@ public class AddWindow extends JFrame
 			input = compQuantityTextField.getText();
 			quantity = Integer.parseInt(input);
 			
-			system.getList().add(new Computer("COMPUTER", compSize));
-			system.getList().get(InventorySystem.count).setQuantity(quantity);
+			system.ifItemExists("COMPUTER", compSize, "NA", quantity);
+//			system.getList().add(new Computer("COMPUTER", compSize));
+//			system.getList().get(InventorySystem.count).setQuantity(quantity);
+//			InventorySystem.count++;
 			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
 					+ "\t Computer Size: " + compSize + "in. added");
 			
