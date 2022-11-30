@@ -67,15 +67,17 @@ public class AddWindow extends JFrame
 	private String tvType = "";
 	private int tvSize;
 	private int quantity;
+	private int compSize;
 //	private ArrayList<Item> inventory;
 	
 	/**
 	 * Constructor
 	 */
-//	public AddWindow(InventorySystem system, ArrayList<Item> inventory)
-	public AddWindow()
+	public AddWindow(InventorySystem system)
+//	public AddWindow()
 	{
 		this.system = system;
+		InventorySystem.printInventory(system.getList());
 		
 		// Create new JFrame
 		frame = new JFrame();
@@ -229,6 +231,13 @@ public class AddWindow extends JFrame
 		screen50.addActionListener(new tvScreenRadioListener());
 		screen60.addActionListener(new tvScreenRadioListener());
 		
+		screen15.addActionListener(new compScreenRadioListener());
+		screen20.addActionListener(new compScreenRadioListener());
+		screen25.addActionListener(new compScreenRadioListener());
+		
+		tvUpdateButton.addActionListener(new tvUpdateListener());
+		compUpdateButton.addActionListener(new compUpdateListener());
+		
 		
 	}
 	
@@ -265,7 +274,7 @@ public class AddWindow extends JFrame
 	}
 	
 	
-	private class tvAddListener implements ActionListener
+	private class tvUpdateListener implements ActionListener
 	{
 
 		@Override
@@ -275,15 +284,54 @@ public class AddWindow extends JFrame
 			input = tvQuantityTextField.getText();
 			quantity = Integer.parseInt(input);
 			
-//			if (tvType == "OLED")
-//			{
-//				system.getList().add(new TV("TV", tvSize, tvType));
-//			}
-//			
-//			if (tvType == "LCD")
-//			{
-//				system.getList().add(new TV("TV", tvSize, tvType));
-//			}
+			if (tvType == "OLED")
+			{
+				system.getList().add(new TV("TV", tvSize, tvType));
+				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
+						+ " TV Size: " + tvSize + " Type: " + tvType + " added");
+			}
+			
+			if (tvType == "LCD")
+			{
+				system.getList().add(new TV("TV", tvSize, tvType));
+				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
+						+ "\t TV Size: " + tvSize + " Type: " + tvType + " added");
+			}
+		}
+		
+	}
+	
+	private class compScreenRadioListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			if (e.getSource() == screen15)
+				compSize = 15;
+			if (e.getSource() == screen20)
+				compSize = 20;
+			if (e.getSource() == screen25)
+				compSize = 25;
+			
+		}
+		
+	}
+	
+	private class compUpdateListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			String input = "";
+			input = compQuantityTextField.getText();
+			quantity = Integer.parseInt(input);
+			
+			system.getList().add(new Computer("Computer", compSize));
+			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
+					+ "\t Computer Size: " + compSize + "in. added");
+			
 		}
 		
 	}

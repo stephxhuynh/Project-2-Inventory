@@ -37,9 +37,10 @@ public class InventorySystem
 	
 	private ArrayList<Item> inventory;
 	
-	public InventorySystem()
+	public InventorySystem() throws IOException
 	{
 		inventory = new ArrayList<Item>();
+		readFromFile("inventoryInfo.txt", inventory);
 	}
 
 	public static void main(String[] args) throws IOException

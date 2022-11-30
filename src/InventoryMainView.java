@@ -24,7 +24,7 @@ public class InventoryMainView extends JFrame
 	// Model/View fields
 	private InventoryMainView view;
 	private InventorySystem system;
-	private ArrayList<Item> inventory;
+//	private ArrayList<Item> inventory;
 	
 	/**
 	 * Constructor
@@ -36,8 +36,7 @@ public class InventoryMainView extends JFrame
 	public InventoryMainView() throws IOException
 	{	
 		view = this;
-		
-		inventory = system.getList();
+		system = new InventorySystem();
 		
 		// Create new JFrame
 		frame = new JFrame();
@@ -132,13 +131,13 @@ public class InventoryMainView extends JFrame
 			if (e.getSource() == checkButton)
 			{
 				frame.dispose();
-				CheckWindow cWindow = new CheckWindow();
+				CheckWindow checkWindow = new CheckWindow();
 			}
 			if(e.getSource() == addButton)
 			{
 				frame.dispose();
-//				AddWindow aWindow = new AddWindow(system, inventory);
-				AddWindow aWindow = new AddWindow();
+				AddWindow addWindow = new AddWindow(system);
+//				AddWindow aWindow = new AddWindow();
 			}
 		}
 	}
