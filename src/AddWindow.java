@@ -77,7 +77,7 @@ public class AddWindow extends JFrame
 //	public AddWindow()
 	{
 		this.system = system;
-		InventorySystem.printInventory(system.getList());
+		system.printInventory();
 		
 		// Create new JFrame
 		frame = new JFrame();
@@ -328,6 +328,7 @@ public class AddWindow extends JFrame
 			quantity = Integer.parseInt(input);
 			
 			system.getList().add(new Computer("COMPUTER", compSize));
+			system.getList().get(InventorySystem.count).setQuantity(quantity);
 			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
 					+ "\t Computer Size: " + compSize + "in. added");
 			
@@ -362,13 +363,6 @@ public class AddWindow extends JFrame
 	{
 		// TODO Auto-generated method stub
 
-	}
-	
-	
-	
-	public static void getInventory()
-	{
-		
 	}
 
 }

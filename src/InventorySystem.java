@@ -39,7 +39,7 @@ public class InventorySystem
 	public InventorySystem() throws IOException
 	{
 		inventory = new ArrayList<Item>();
-		readFromFile("inventoryInfo.txt", inventory);
+		readFromFile("inventoryInfo.txt");
 	}
 
 	public static void main(String[] args) throws IOException
@@ -73,7 +73,7 @@ public class InventorySystem
 	 * @param inventory to add/search
 	 * @param keyboard
 	 */
-	public static void printMenu(ArrayList<Item> inventory, Scanner keyboard)
+	public void printMenu(Scanner keyboard)
 	{
 		String choice;
 
@@ -85,17 +85,17 @@ public class InventorySystem
 			choice = askMenu(keyboard);
 			if (choice.equalsIgnoreCase("Add"))
 			{
-				addInventory(inventory, keyboard);
+				addInventory(keyboard);
 			}
 
 			else if (choice.equalsIgnoreCase("Check"))
 			{
-				checkInventory(inventory, keyboard);
+				checkInventory(keyboard);
 			}
 
 			else if (choice.equalsIgnoreCase("Show all"))
 			{
-				printInventory(inventory);
+				printInventory();
 			}
 			askCont = askMenuContinue(keyboard);
 		}
@@ -107,7 +107,7 @@ public class InventorySystem
 	 * @param inventory to add to
 	 * @param keyboard
 	 */
-	public static void addInventory(ArrayList<Item> inventory, Scanner keyboard)
+	public void addInventory(Scanner keyboard)
 	{
 		String category = null;
 		// int count = 0; //used to keep track of ArrayList indexing
@@ -124,7 +124,7 @@ public class InventorySystem
 
 			if (category.equalsIgnoreCase("TV"))
 			{
-				addTV(inventory, category, keyboard);
+				addTV(category, keyboard);
 
 			
 
@@ -134,7 +134,7 @@ public class InventorySystem
 			}
 			else if (category.equalsIgnoreCase("Computer"))
 			{
-				addComputer(inventory, category, keyboard);
+				addComputer(category, keyboard);
 
 				keyboard.nextLine(); // clear input
 
@@ -149,8 +149,7 @@ public class InventorySystem
 	 * @param inventory
 	 * @param keyboard
 	 */
-	public static void checkInventory(ArrayList<Item> inventory,
-			Scanner keyboard)
+	public void checkInventory(Scanner keyboard)
 	{
 
 		// holds user input variables that will help us check inventory
@@ -178,7 +177,7 @@ public class InventorySystem
 
 					// search for item in inventory arrayList and print quantity
 					// if found
-					searchTVInventory(inventory, category, size, type);
+					searchTVInventory(category, size, type);
 
 					choice = askContinue(keyboard);
 				}
@@ -190,10 +189,11 @@ public class InventorySystem
 					keyboard.nextLine(); // clear input
 					// search for item in inventory arrayList and print quantity
 					// if found
-					searchTVInventory(inventory, category, size, type);
+					searchTVInventory(category, size, type);
 
 					choice = askContinue(keyboard);
 				}
+
 			}
 
 			else if (category.equalsIgnoreCase("Computer"))
@@ -205,7 +205,7 @@ public class InventorySystem
 
 				// search for item in inventory arrayList and print quantity if
 				// found
-				searchComputerInventory(inventory, category, size);
+				searchComputerInventory(category, size);
 
 				choice = askContinue(keyboard);
 			}
@@ -219,7 +219,7 @@ public class InventorySystem
 	 * @param category  for constructor
 	 * @param keyboard
 	 */
-	public static void addTV(ArrayList<Item> inventory, String category,
+	public void addTV(String category,
 			Scanner keyboard)
 	{
 		String type;
@@ -230,7 +230,8 @@ public class InventorySystem
 		size = askTVSize(keyboard);
 
 		// checks if item exists and adds quantities to existing or new item
-		ifItemExists(inventory, category, size, type, keyboard);
+		ifItemExists(category, size, type, keyboard);
+
 	}
 
 	/**
@@ -240,8 +241,7 @@ public class InventorySystem
 	 * @param category  for constructor
 	 * @param keyboard
 	 */
-	public static void addComputer(ArrayList<Item> inventory, String category,
-			Scanner keyboard)
+	public void addComputer(String category, Scanner keyboard)
 	{
 		int size;
 
@@ -249,7 +249,8 @@ public class InventorySystem
 
 		// "NA" passed because computer does not have type
 		// checks if item exists and adds quantities to existing or new item
-		ifItemExists(inventory, category, size, "NA", keyboard);
+		ifItemExists(category, size, "NA", keyboard);
+
 	}
 
 	/**
@@ -262,7 +263,7 @@ public class InventorySystem
 	 *                                  prompts user to enter information again.
 	 * @throws InputMistmatchException  if choice is not a string
 	 */
-	public static String askMenu(Scanner keyboard)
+	public String askMenu(Scanner keyboard)
 	{
 		boolean validInput = false;
 		String choice = null;
@@ -303,7 +304,7 @@ public class InventorySystem
 	 *                                  "COMPUTER"
 	 * 
 	 */
-	public static String askCategory(Scanner keyboard)
+	public String askCategory(Scanner keyboard)
 	{
 		boolean validInput = false;
 		String category = null;
@@ -337,7 +338,7 @@ public class InventorySystem
 	 * @return String type
 	 * @throws IllegalArgumentException if type is not "OLED" or "LCD"
 	 */
-	public static String askTVType(Scanner keyboard)
+	public String askTVType(Scanner keyboard)
 	{
 		boolean validInput = false;
 		String type = null;
@@ -362,6 +363,7 @@ public class InventorySystem
 			}
 		} while (!validInput);
 		return type;
+
 	}
 
 	/**
@@ -402,7 +404,7 @@ public class InventorySystem
 	 * @return int size
 	 * @throws IllegalArgumentException if size is not an int of 15, 20, or 25
 	 */
-	public static int askComputerSize(Scanner keyboard)
+	public int askComputerSize(Scanner keyboard)
 	{
 		int size = 0;
 		boolean validInput = false;
@@ -437,8 +439,7 @@ public class InventorySystem
 	 * @param type      to compare
 	 *
 	 */
-	public static void searchTVInventory(ArrayList<Item> inventory,
-			String category, int size, String type)
+	public void searchTVInventory(String category, int size, String type)
 	{
 		boolean exists = false;
 		int quantity = 0;
@@ -461,6 +462,7 @@ public class InventorySystem
 					+ type + " is:\t" + quantity);
 		}
 		else System.out.println("Item does not exist");
+
 	}
 
 	/**
@@ -473,8 +475,7 @@ public class InventorySystem
 	 * @param size
 	 * @return int quantity
 	 */
-	public static void searchComputerInventory(ArrayList<Item> inventory,
-			String category, int size)
+	public void searchComputerInventory(String category, int size)
 	{
 		boolean exists = false;
 		int quantity = 0;
@@ -490,6 +491,7 @@ public class InventorySystem
 		if (exists == true) System.out.println("\nQuantity of " + category + " "
 				+ size + "in is:\t" + quantity);
 		else System.out.println("Item does not exist");
+
 	}
 
 	/**
@@ -499,7 +501,7 @@ public class InventorySystem
 	 * @return int quantity
 	 * @throws IllegalArgument if quantity is negative or equal to 0
 	 */
-	public static int askQuantity(Scanner keyboard)
+	public int askQuantity(Scanner keyboard)
 	{
 		int quantity = 0;
 		boolean validInput = false;
@@ -530,7 +532,7 @@ public class InventorySystem
 	 * @throws IllegalArgumentException if "y" or "n" is not entered
 	 * 
 	 */
-	public static boolean askContinue(Scanner keyboard)
+	public boolean askContinue(Scanner keyboard)
 	{
 		boolean validInput = false;
 		String value;
@@ -565,7 +567,7 @@ public class InventorySystem
 	 * @throws IllegalArgumentException if "y" or "n" is not entered
 	 * 
 	 */
-	public static boolean askMenuContinue(Scanner keyboard)
+	public boolean askMenuContinue(Scanner keyboard)
 	{
 		boolean validInput = false;
 		String value;
@@ -597,7 +599,7 @@ public class InventorySystem
 	 * 
 	 * @param inventory
 	 */
-	public static void printInventory(ArrayList<Item> inventory)
+	public void printInventory()
 	{
 		for (int i = 0; i < inventory.size(); i++)
 		{
@@ -611,7 +613,7 @@ public class InventorySystem
 	 * 
 	 * @param inventory
 	 */
-	public static void printQuantity(ArrayList<Item> inventory)
+	public void printQuantity()
 	{
 
 		int total = 0;
@@ -629,7 +631,7 @@ public class InventorySystem
 	 * @param inventory to add to
 	 * @throws FileNotFoundException thrown if no such file exists
 	 */
-	public static void readFromFile(String fileName, ArrayList<Item> inventory)
+	public void readFromFile(String fileName)
 			throws FileNotFoundException
 	{
 		Scanner input = null;
@@ -695,7 +697,7 @@ public class InventorySystem
 	 * @throws IOException
 	 * @throws FileNotFoundException if no such file exists
 	 */
-	public static void writeToFile(String fileName, ArrayList<Item> inventory)
+	public void writeToFile(String fileName)
 			throws IOException, FileNotFoundException
 	{
 
@@ -754,7 +756,7 @@ public class InventorySystem
 	 * @param type
 	 * @param keyboard
 	 */
-	public static void ifItemExists(ArrayList<Item> inventory, String category,
+	public void ifItemExists(String category,
 			int size, String type, Scanner keyboard)
 	{
 		boolean exists = false;

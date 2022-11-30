@@ -32,9 +32,9 @@ public class testInventorySystem
 		
 		
 		//what's the difference???
-//		system.writeToFile("inventoryInfo.txt", system.getList());
-		InventorySystem.writeToFile("inventoryInfo.txt", system.getList());
-		InventorySystem.printInventory(system.getList());
+		system.writeToFile("inventoryInfo.txt");
+//		InventorySystem.writeToFile("inventoryInfo.txt", system.getList());
+//		InventorySystem.printInventory(system.getList());
 		
 		
 //		keyboard.close();
