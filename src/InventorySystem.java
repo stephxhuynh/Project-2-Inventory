@@ -12,7 +12,6 @@ import java.util.Scanner;
  * Responsibilities of class: Run program for user to input inventory
  * and search inventory.
  * 
- * 
  * @author Stephanie Huynh
  * @author Abraham Kim
  * Other contributors:
@@ -195,7 +194,6 @@ public class InventorySystem
 
 					choice = askContinue(keyboard);
 				}
-
 			}
 
 			else if (category.equalsIgnoreCase("Computer"))
@@ -233,7 +231,6 @@ public class InventorySystem
 
 		// checks if item exists and adds quantities to existing or new item
 		ifItemExists(inventory, category, size, type, keyboard);
-
 	}
 
 	/**
@@ -253,7 +250,6 @@ public class InventorySystem
 		// "NA" passed because computer does not have type
 		// checks if item exists and adds quantities to existing or new item
 		ifItemExists(inventory, category, size, "NA", keyboard);
-
 	}
 
 	/**
@@ -366,7 +362,6 @@ public class InventorySystem
 			}
 		} while (!validInput);
 		return type;
-
 	}
 
 	/**
@@ -466,7 +461,6 @@ public class InventorySystem
 					+ type + " is:\t" + quantity);
 		}
 		else System.out.println("Item does not exist");
-
 	}
 
 	/**
@@ -496,7 +490,6 @@ public class InventorySystem
 		if (exists == true) System.out.println("\nQuantity of " + category + " "
 				+ size + "in is:\t" + quantity);
 		else System.out.println("Item does not exist");
-
 	}
 
 	/**

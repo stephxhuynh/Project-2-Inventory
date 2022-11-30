@@ -313,7 +313,6 @@ public class AddWindow extends JFrame
 				compSize = 20;
 			if (e.getSource() == screen25)
 				compSize = 25;
-			
 		}
 		
 	}
@@ -328,7 +327,7 @@ public class AddWindow extends JFrame
 			input = compQuantityTextField.getText();
 			quantity = Integer.parseInt(input);
 			
-			system.getList().add(new Computer("Computer", compSize));
+			system.getList().add(new Computer("COMPUTER", compSize));
 			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
 					+ "\t Computer Size: " + compSize + "in. added");
 			
@@ -349,7 +348,7 @@ public class AddWindow extends JFrame
 
 				try
 				{
-					InventoryMainView mWindow = new InventoryMainView();
+					InventoryMainView mWindow = new InventoryMainView(system);
 				}
 				catch (IOException e1)
 				{

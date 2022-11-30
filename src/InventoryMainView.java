@@ -31,12 +31,12 @@ public class InventoryMainView extends JFrame
 	 * @throws IOException 
 	 */
 
-	//public InventoryMainView(InventorySystem system)
+	public InventoryMainView(InventorySystem system) throws IOException
 
-	public InventoryMainView() throws IOException
+//	public InventoryMainView() throws IOException
 	{	
 		view = this;
-		system = new InventorySystem();
+		this.system = system;
 		
 		// Create new JFrame
 		frame = new JFrame();
@@ -144,7 +144,7 @@ public class InventoryMainView extends JFrame
 	
 	public static void main(String[] args) throws IOException
 	{
-//		new InventoryMainView(new InventorySystem());
-		new InventoryMainView();
+		new InventoryMainView(new InventorySystem());
+//		new InventoryMainView();
 	}
 }

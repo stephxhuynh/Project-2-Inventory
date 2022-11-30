@@ -211,15 +211,15 @@ public class CheckWindow extends JFrame
 		{
 			if (e.getSource() == exitButton)
 			{
-				frame.dispose();
-				try
-				{
-					InventoryMainView mWindow = new InventoryMainView();
-				}
-				catch (IOException e1)
-				{
-					e1.printStackTrace();
-				}
+//				frame.dispose();
+//				try
+//				{
+//					InventoryMainView mWindow = new InventoryMainView();
+//				}
+//				catch (IOException e1)
+//				{
+//					e1.printStackTrace();
+//				}
 			}
 		}
 	}
