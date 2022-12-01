@@ -4,6 +4,25 @@ import java.awt.*;			// Needed for Color class
 import java.io.*;  			// Needed for file reading
 import java.util.*;			// Needed for file reading
 
+
+/**
+ * Responsibilities of class: Contain home page of GUI for inventory system
+ * 
+ * @author Stephanie Huynh
+ * @author Abraham Kim
+ * Other contributors:
+ * Tasha Frankie
+ *
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ * Gaddis, T. (2015). Starting out with Java: From control structures through objects. Addison-Wesley.
+ * 
+ *         
+ * @version 1.0 11/21/2022
+ */
+
 public class InventoryMainView extends JFrame
 {
 	private JFrame frame;				// To reference the J frame

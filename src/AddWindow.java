@@ -5,6 +5,24 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.awt.*;			// Needed for Color class
 
+/**
+ * Responsibilities of class: Contain GUI and information to add/modify inventory
+ * 
+ * @author Stephanie Huynh
+ * @author Abraham Kim
+ * Other contributors:
+ * Tasha Frankie
+ *
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ * Gaddis, T. (2015). Starting out with Java: From control structures through objects. Addison-Wesley.
+ * 
+ *         
+ * @version 1.0 11/21/2022
+ */
+
 public class AddWindow extends JFrame
 {
 	// Panels
@@ -297,19 +315,6 @@ public class AddWindow extends JFrame
 			input = tvQuantityTextField.getText();
 			quantity = Integer.parseInt(input);
 			
-//			if (tvType == "OLED")
-//			{
-//				system.getList().add(new TV("TV", tvSize, tvType));
-//				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
-//						+ " TV Size: " + tvSize + " Type: " + tvType + " added");
-//			}
-//			
-//			if (tvType == "LCD")
-//			{
-//				system.getList().add(new TV("TV", tvSize, tvType));
-//				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
-//						+ "\t TV Size: " + tvSize + " Type: " + tvType + " added");
-//			}
 			
 			system.ifItemExists("TV", tvSize, tvType, quantity);
 //			system.getList().add(new TV("TV", tvSize, tvType));
