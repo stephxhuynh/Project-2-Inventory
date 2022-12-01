@@ -90,6 +90,7 @@ public class AddWindow extends JFrame
 	
 	/**
 	 * Constructor
+	 * @param InventorySystem information to access arraylist and methods
 	 */
 	public AddWindow(InventorySystem system)
 //	public AddWindow()
@@ -128,6 +129,10 @@ public class AddWindow extends JFrame
 		
 		frame.setVisible(true);
 	}
+	
+	/**
+	 * builds panel of add window
+	 */
 	
 	private void buildMainPanel()
 	{
@@ -272,6 +277,10 @@ public class AddWindow extends JFrame
 		
 	}
 	
+	/**
+	 * Action listener for TV type radio buttons
+	 *
+	 */
 	private class tvTypeRadioListener implements ActionListener
 	{
 		@Override
@@ -288,6 +297,10 @@ public class AddWindow extends JFrame
 		}
 	}
 	
+	/**
+	 * Action listener for TV screen size radio buttons
+	 *
+	 */
 	private class tvScreenRadioListener implements ActionListener
 	{
 
@@ -304,7 +317,10 @@ public class AddWindow extends JFrame
 		}
 	}
 	
-	
+	/**
+	 * Action listener to update (add or modify) inventory arraylist for TV items
+	 *
+	 */
 	private class tvUpdateListener implements ActionListener
 	{
 
@@ -327,6 +343,12 @@ public class AddWindow extends JFrame
 		
 	}
 	
+	
+	/**
+	 * Action listener for computer screen size radio buttons
+	 *
+	 */
+	
 	private class compScreenRadioListener implements ActionListener
 	{
 
@@ -343,6 +365,10 @@ public class AddWindow extends JFrame
 		
 	}
 	
+	/**
+	 * Action listener to update (add or modify) inventory arraylist for computer items
+	 *
+	 */
 	private class compUpdateListener implements ActionListener
 	{
 
@@ -364,6 +390,11 @@ public class AddWindow extends JFrame
 		
 	}
 	
+	/**
+	 * Action listener when user clicks exit button on add window
+	 * Takes user back to main view window
+	 *
+	 */
 	private class exitButtonListener implements ActionListener
 	{
 		@Override
@@ -387,10 +418,5 @@ public class AddWindow extends JFrame
 		}
 	}
 	
-	public static void main(String[] args)
-	{
-		// TODO Auto-generated method stub
-
-	}
 
 }

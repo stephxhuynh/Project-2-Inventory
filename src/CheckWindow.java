@@ -95,6 +95,7 @@ public class CheckWindow extends JFrame
 
 	/**
 	 * Constructor
+	 * @param InventorySystem
 	 */
 	public CheckWindow(InventorySystem system)
 	{

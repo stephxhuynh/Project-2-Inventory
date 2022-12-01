@@ -83,6 +83,10 @@ public class InventoryMainView extends JFrame
 		frame.setVisible(true);
 	}
 	
+	/**
+	 * builds panel of main view window
+	 * @throws IOException
+	 */
 	private void buildMainPanel() throws IOException
 	{
 		// Button Panel
@@ -142,6 +146,11 @@ public class InventoryMainView extends JFrame
 		infoPanel.add(scrollPane);
 	}
 	
+	/**
+	 * Action listener for check or add buttons 
+	 * Opens new window of check or add based on what's clicked
+	 *
+	 */
 	private class ButtonListener implements ActionListener
 	{
 		@Override
@@ -162,6 +171,11 @@ public class InventoryMainView extends JFrame
 		}
 	}
 	
+	/**
+	 * main method to create a window of the main view
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException
 	{
 		new InventoryMainView(new InventorySystem());
