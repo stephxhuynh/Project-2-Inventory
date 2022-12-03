@@ -74,7 +74,7 @@ public class AddWindow extends JFrame
 	
 	// Cancel
 	private JPanel exitPanel;					// To reference cancel panel
-	private JButton exitButton;				// To reference cancel button
+	private JButton exitButton;					// To reference cancel button
 	
 	// Window size
 	final int WINDOW_WIDTH = 1000;
@@ -239,14 +239,12 @@ public class AddWindow extends JFrame
 		compUpdateButton = new JButton("Add/Modify");
 		compUpdateButton.setPreferredSize(new Dimension(100, 100));
 		compUpdatePanel.add(compUpdateButton);
-//		((JLabel) compUpdatePanel.add(compUpdateButton)).setHorizontalAlignment(SwingConstants.RIGHT);
 		
 		// Top TV spec panel
 		tvSpecPanel.add(typePanel);
 		tvSpecPanel.add(tvScreenPanel);
 		tvSpecPanel.add(tvQuantityPanel);
 		tvSpecPanel.add(tvUpdatePanel);
-		
 		
 		// Bottom Computer spec panel
 		compSpecPanel.add(compScreenPanel);

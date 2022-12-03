@@ -25,54 +25,45 @@ import java.awt.*; // Needed for Color class
 public class CheckWindow extends JFrame
 {
 	// Panels
-	private JFrame frame; // To reference the J frame
-	private JPanel tvCategoryPanel; // To reference tv category panel
-	private JPanel compCategoryPanel; // To reference computer category panel
-	private JPanel mainPanel; // To reference the main panel
-	private JPanel specTVPanel; // To reference the specification panel
-	private JPanel specCompPanel;
-	private JPanel typePanel; // To reference the TV type panel
+	private JFrame frame;						// To reference the J frame
+	private JPanel tvCategoryPanel; 			// To reference TV category panel
+	private JPanel compCategoryPanel; 			// To reference computer category panel
+	private JPanel mainPanel; 					// To reference the main panel
+	private JPanel specTVPanel; 				// To reference the specification TV panel
+	private JPanel specCompPanel;				// To reference the specification computer panel
+	private JPanel typePanel; 					// To reference the TV type panel
 
 	// TV Type
-	private JLabel TVLabel; // To reference the TV label
-	private JLabel typeLabel; // To reference the type label
-	private JRadioButton OLEDrButton; // To reference OLED radio button
-	private JRadioButton LCDrButton; // To reference LCD radio button
-	private ButtonGroup typeRadioButtonGroup; // To reference the type radio
-												// button group
-
+	private JLabel TVLabel; 					// To reference the TV label
+	private JLabel typeLabel; 					// To reference the type label
+	private JRadioButton OLEDrButton; 			// To reference OLED radio button
+	private JRadioButton LCDrButton; 			// To reference LCD radio button
+	private ButtonGroup typeRadioButtonGroup; 	// To reference the type radio button group
+	
 	// TV Screen size
-	private JPanel tvScreenPanel; // To reference the size
-	private JLabel tvScreenLabel; // To reference TV screen label
-	private JRadioButton screen40; // To reference 40 inch TV screen size
-	private JRadioButton screen50; // To reference 50 inch TV screen size
-	private JRadioButton screen60; // To reference 60 inch TV screen size
-	private ButtonGroup screenTVButtonGroup; // To reference TV screen size
-												// radio button group
+	private JPanel tvScreenPanel; 				// To reference the size
+	private JLabel tvScreenLabel; 				// To reference TV screen label
+	private JRadioButton screen40; 				// To reference 40 inch TV screen size
+	private JRadioButton screen50; 				// To reference 50 inch TV screen size
+	private JRadioButton screen60; 				// To reference 60 inch TV screen size
+	private ButtonGroup screenTVButtonGroup; 	// To reference TV screen size radio button group
 
-	// Comp screen size
-	private JPanel compScreenPanel; // To reference the computer screen size
-									// panel
-	private JLabel compLabel; // To reference the computer label
-	private JLabel compSizeLabel; // To reference the computer size label
-	private JRadioButton screen15; // To reference 15 inch computer screen size
-	private JRadioButton screen20; // To reference 20 inch computer screen size
-	private JRadioButton screen25; // To reference 25 inch computer screen size
-	private ButtonGroup compScreenButtonGroup; // To reference computer screen
-												// size radio button group
+	// Computer Screen size
+	private JPanel compScreenPanel; 			// To reference the computer screen size panel
+	private JLabel compLabel; 					// To reference the computer label
+	private JLabel compSizeLabel; 				// To reference the computer size label
+	private JRadioButton screen15; 				// To reference 15 inch computer screen size
+	private JRadioButton screen20; 				// To reference 20 inch computer screen size
+	private JRadioButton screen25; 				// To reference 25 inch computer screen size
+	private ButtonGroup compScreenButtonGroup;	// To reference computer screen size radio button group
 
 	// Quantity
-	private JTextField tvQuantityTextField; // To reference the TV quantity text
-											// field
-	private JTextField compQuantityTextField; // To reference the computer
-												// quantity text field
-	private JPanel tvQuantityPanel; // To reference the TV quantity panel
-	private JLabel tvQuantityLabel; // To reference the TV quantity label
-	private JPanel compQuantityPanel; // To reference the computer quantity
-										// panel
-	private JLabel compQuantityLabel; // To reference the computer quantity
-										// label
-	
+	private JTextField tvQuantityTextField;		// To reference the TV quantity text field
+	private JTextField compQuantityTextField;	// To reference the computer quantity text field
+	private JPanel tvQuantityPanel; 			// To reference the TV quantity panel
+	private JLabel tvQuantityLabel; 			// To reference the TV quantity label
+	private JPanel compQuantityPanel; 			// To reference the computer quantity panel
+	private JLabel compQuantityLabel; 			// To reference the computer quantity label
 	
 	// Check Button/Panel
 	private JPanel checkPanel;

@@ -191,9 +191,7 @@ public class InventorySystem
 
 					choice = askContinue(keyboard);
 				}
-
 			}
-
 			else if (category.equalsIgnoreCase("Computer"))
 			{
 				// ask size of computer
@@ -229,7 +227,6 @@ public class InventorySystem
 
 		// checks if item exists and adds quantities to existing or new item
 //		ifItemExists(category, size, type, keyboard);
-
 	}
 
 	/**
@@ -248,7 +245,6 @@ public class InventorySystem
 		// "NA" passed because computer does not have type
 		// checks if item exists and adds quantities to existing or new item
 //		ifItemExists(category, size, "NA", keyboard);
-
 	}
 
 	/**
@@ -289,7 +285,6 @@ public class InventorySystem
 				System.out.println("Please enter a String. Try again.");
 			}
 		} while (!validInput);
-
 		return choice;
 	}
 
@@ -361,7 +356,6 @@ public class InventorySystem
 			}
 		} while (!validInput);
 		return type;
-
 	}
 
 	/**
@@ -613,7 +607,6 @@ public class InventorySystem
 	 */
 	public void printQuantity()
 	{
-
 		int total = 0;
 		for (int i = 0; i < inventory.size(); i++)
 		{
@@ -669,7 +662,6 @@ public class InventorySystem
 					inventory.get(count).setQuantity(quantity);
 					count++;
 				}
-
 			}
 		}
 		catch (FileNotFoundException e)
@@ -698,7 +690,6 @@ public class InventorySystem
 	public void writeToFile(String fileName)
 			throws IOException, FileNotFoundException
 	{
-
 		FileWriter fWriter = null;
 		PrintWriter pWriter = null;
 		try
@@ -832,7 +823,6 @@ public class InventorySystem
 		boolean exists = false;
 		int indexExist = -1;
 		
-		
 		for (int i = 0; i < inventory.size(); i++)
 		{
 			if (inventory.get(i) instanceof TV)
@@ -880,7 +870,6 @@ public class InventorySystem
 				count++;
 			}
 		}
-
 	}
 	
 	/**
@@ -905,12 +894,9 @@ public class InventorySystem
 					exists = true;
 					quantity = inventory.get(i).getQuantity();
 				}
-
 			}
 		}
 		return quantity;
-
-
 	}
 	
 	/**
@@ -944,7 +930,4 @@ public class InventorySystem
 	{
 		return inventory;
 	}
-	
-	
-
 }
