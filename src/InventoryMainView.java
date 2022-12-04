@@ -54,8 +54,6 @@ public class InventoryMainView extends JFrame
 	 * @throws Exception 
 	 */
 	public InventoryMainView(InventorySystem system) throws Exception
-	
-//	public InventoryMainView() throws IOException
 	{	
 		view = this;
 		this.system = system;
