@@ -29,8 +29,8 @@ public class CheckWindow extends JFrame
 	private JPanel tvCategoryPanel; 			// To reference TV category panel
 	private JPanel compCategoryPanel; 			// To reference computer category panel
 	private JPanel mainPanel; 					// To reference the main panel
-	private JPanel specTVPanel; 				// To reference the specification TV panel
-	private JPanel specCompPanel;				// To reference the specification computer panel
+	private JPanel TVSpecPanel; 				// To reference the specification TV panel
+	private JPanel CompSpecPanel;				// To reference the specification computer panel
 	private JPanel typePanel; 					// To reference the TV type panel
 
 	// TV Type
@@ -66,9 +66,10 @@ public class CheckWindow extends JFrame
 	private JLabel compQuantityLabel; 			// To reference the computer quantity label
 	
 	// Check Button/Panel
-	private JPanel checkPanel;
-	private JButton tvCheckButton;
-	private JButton compCheckButton;
+	private JPanel tvCheckPanel;				// To reference the TV check panel
+	private JButton tvCheckButton;				// To reference the TV check button
+	private JPanel compCheckPanel;				// To reference the computer check panel
+	private JButton compCheckButton;			// To reference the computer check button
 
 	// Cancel
 	private JPanel exitPanel; // To reference cancel panel
@@ -98,29 +99,27 @@ public class CheckWindow extends JFrame
 		frame.setTitle("Check");
 
 		// Set the size of the window.
-		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+//		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 
 		// Specify what happens when the close button is clicked.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Main Panel
 		mainPanel = new JPanel();
-		mainPanel.setLayout(new GridLayout(4, 4));
+		mainPanel.setLayout(new GridLayout(3, 3));
 
 		buildMainPanel();
 
 		frame.add(mainPanel);
 		mainPanel.add(tvCategoryPanel);
+		mainPanel.add(TVSpecPanel);
 		mainPanel.add(compCategoryPanel);
-		mainPanel.add(TVLabel);
-		mainPanel.add(specTVPanel);
-		mainPanel.add(compLabel);
-		mainPanel.add(specCompPanel);
-//		mainPanel.add(checkPanel);
-		
+		mainPanel.add(CompSpecPanel);
 		mainPanel.add(exitPanel);
 
 		exitButton.addActionListener(new exitButtonListener());
+		
+		frame.pack();
 
 		frame.setVisible(true);
 	}
@@ -129,24 +128,21 @@ public class CheckWindow extends JFrame
 	{
 		// Category Panel
 		tvCategoryPanel = new JPanel();
-		tvCategoryPanel.setLayout(new FlowLayout());
 		TVLabel = new JLabel("TV");
-		TVLabel.setPreferredSize(new Dimension(100, 100));
 		TVLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		TVLabel.setVerticalAlignment(SwingConstants.CENTER);
 		tvCategoryPanel.add(TVLabel);
 		compCategoryPanel = new JPanel();
-		compCategoryPanel.setLayout(new FlowLayout());
 		compLabel = new JLabel("Computer");
 		compLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		compLabel.setVerticalAlignment(SwingConstants.CENTER);
 		compCategoryPanel.add(compLabel);
 
 		// Specifications Panel
-		specTVPanel = new JPanel();
-		specTVPanel.setLayout(new GridLayout(1, 0));
-		specCompPanel = new JPanel();
-		specCompPanel.setLayout(new GridLayout(1, 0));
+		TVSpecPanel = new JPanel();
+		TVSpecPanel.setLayout(new GridLayout(1, 0));
+		CompSpecPanel = new JPanel();
+		CompSpecPanel.setLayout(new GridLayout(1, 0));
 
 		// Type panel inside spec panel
 		typePanel = new JPanel();
@@ -195,29 +191,27 @@ public class CheckWindow extends JFrame
 		compScreenButtonGroup.add(screen15);
 		compScreenButtonGroup.add(screen20);
 		compScreenButtonGroup.add(screen25);
-
 		
 		// Check Button for tv and computer
-//		checkPanel = new JPanel();
+		tvCheckPanel = new JPanel();
 		tvCheckButton = new JButton("Check");
-		tvCheckButton.setPreferredSize(new Dimension(100,100));
+		tvCheckButton.setPreferredSize(new Dimension(100, 100));
+		tvCheckPanel.add(tvCheckButton);
+		compCheckPanel = new JPanel();
 		compCheckButton = new JButton("Check");
-		compCheckButton.setPreferredSize(new Dimension(100,100));
-		
-//		checkPanel.add(tvCheckButton);
-//		checkPanel.add(compCheckButton);
+		compCheckButton.setPreferredSize(new Dimension(100, 100));
+		compCheckPanel.add(compCheckButton);
 
 		// Top TV spec panel
-		specTVPanel.add(typePanel);
-		specTVPanel.add(tvScreenPanel);
-		specTVPanel.add(tvCheckButton);
-
+		TVSpecPanel.add(typePanel);
+		TVSpecPanel.add(tvScreenPanel);
+		TVSpecPanel.add(tvCheckPanel);
 
 		// Botton Computer spec panel
-		specCompPanel.add(compScreenPanel);
-		specCompPanel.add(compCheckButton);
+		CompSpecPanel.add(compScreenPanel);
+		CompSpecPanel.add(compCheckPanel);
 
-		// Cancel panel
+		// Exit panel
 		exitPanel = new JPanel();
 		exitButton = new JButton("Exit");
 		exitButton.setPreferredSize(new Dimension(150, 100));
@@ -264,7 +258,6 @@ public class CheckWindow extends JFrame
 			if (e.getSource() == screen40) tvSize = 40;
 			if (e.getSource() == screen50) tvSize = 50;
 			if (e.getSource() == screen60) tvSize = 60;
-
 		}
 	}
 
@@ -280,7 +273,6 @@ public class CheckWindow extends JFrame
 		}
 
 	}
-	
 
 	private class tvCheckListener implements ActionListener
 	{
@@ -298,9 +290,7 @@ public class CheckWindow extends JFrame
 			{
 				JOptionPane.showMessageDialog(CheckWindow.this, "Item does not exist");
 			}
-			
 		}
-		
 	}
 	
 	private class compCheckListener implements ActionListener
@@ -318,11 +308,10 @@ public class CheckWindow extends JFrame
 			else
 			{
 				JOptionPane.showMessageDialog(CheckWindow.this, "Item does not exist");
-			}
-			
+			}	
 		}
-		
 	}
+	
 	private class exitButtonListener implements ActionListener
 	{
 		@Override
@@ -335,7 +324,7 @@ public class CheckWindow extends JFrame
 				{
 					InventoryMainView mWindow = new InventoryMainView(system);
 				}
-				catch (IOException e1)
+				catch (Exception e1)
 				{
 					e1.printStackTrace();
 				}
@@ -348,5 +337,4 @@ public class CheckWindow extends JFrame
 		// TODO Auto-generated method stub
 
 	}
-
 }

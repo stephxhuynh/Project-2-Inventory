@@ -35,6 +35,7 @@ public class InventoryMainView extends JFrame
 	private JPanel addPanel;			// To reference the add panel
 	private JPanel checkPanel;			// To reference the check panel
 	private JPanel infoPanel;			// To reference the info panel
+	private JPanel jTablePanel;			// To reference the jTable panel
 	private JButton addButton;			// To reference an add button
 	private JButton checkButton;		// To reference a check button
 	private JTextArea textInput;		// To reference text area
@@ -66,7 +67,7 @@ public class InventoryMainView extends JFrame
 		frame.setTitle("Inventory System");
 		
 		// Set the size of the window.
-		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+//		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		
 		// Specify what happens when the close button is clicked.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,7 +81,7 @@ public class InventoryMainView extends JFrame
 		frame.add(mainPanel);
 		
 		mainPanel.add(buttonPanel, BorderLayout.WEST);
-		mainPanel.add(infoPanel, BorderLayout.CENTER);
+		mainPanel.add(jTablePanel, BorderLayout.CENTER);
 		
 		frame.pack();
 		
@@ -99,9 +100,9 @@ public class InventoryMainView extends JFrame
 		checkPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(2, 1));
 		addButton = new JButton("Add");
-		addButton.setPreferredSize(new Dimension(200, 200));
+		addButton.setPreferredSize(new Dimension(150, 150));
 		checkButton = new JButton("Check");
-		checkButton.setPreferredSize(new Dimension(200, 200));
+		checkButton.setPreferredSize(new Dimension(150, 150));
 		addPanel.add(addButton);
 		checkPanel.add(checkButton);
 		buttonPanel.add(addPanel);
@@ -112,42 +113,18 @@ public class InventoryMainView extends JFrame
 		
 		// Info Panel
 		infoPanel = new JPanel();
+		jTablePanel = new JPanel();
 		// Data to be displayed in the JTable
-//		String[][] data = {
-//				{"OLED", "TV", "40", "25", "1", "1"},
-//				{"NA", "COMPUTER", "20", "23", "2", "2"}]
 		String[][] data = create2DMatrixFromFile("inventoryinfo.txt", 6);
 		
 		// Column Names
 		String[] columnNames = {"Type", "Category", "Screen Size", "Quantity", "Aisle", "Shelf"};
 		// Initialize table
 		table = new JTable(data, columnNames);
-		table.setBounds(30, 40, 1000, 700);
+//		table.setBounds(30, 40, 1000, 700);
 		scrollPane = new JScrollPane(table);
-//		try
-//		{
-//			FileReader reader = new FileReader("inventoryInfo.txt");
-//			// Create a scanner object from FileReader
-//			Scanner s = new Scanner(reader);
-//			// Create a string that will store all the text in the text file
-//			String storeAllString = "";
-//			
-//			// Put all text from text file into created string
-//			while (s.hasNextLine())
-//			{
-//				String temp = s.nextLine();
-//				storeAllString = storeAllString + temp;
-//			}
-//			textInput = new JTextArea(storeAllString);
-//			JScrollPane scrollPane = new JScrollPane(textInput);
-//			scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-//		}
-//		catch (FileNotFoundException e)
-//		{
-//			JOptionPane.showMessageDialog(InventoryMainView.this, "File not found.");
-//		}
-//		infoPanel.add(textInput);
-		infoPanel.add(scrollPane);
+		jTablePanel.add(scrollPane);
+		infoPanel.add(jTablePanel);
 	}
 	
 	/**

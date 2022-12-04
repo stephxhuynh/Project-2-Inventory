@@ -105,27 +105,27 @@ public class AddWindow extends JFrame
 		frame.setTitle("Add");
 		
 		// Set the size of the window.
-		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+//		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		
 		// Specify what happens when the close button is clicked.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		// Main Panel
 		mainPanel = new JPanel();
-		mainPanel.setLayout(new GridLayout(4, 4));
+		mainPanel.setLayout(new GridLayout(3, 3));
 		
 		buildMainPanel();
 		
 		frame.add(mainPanel);
 		mainPanel.add(tvCategoryPanel);
-		mainPanel.add(compCategoryPanel);
-		mainPanel.add(TVLabel);
 		mainPanel.add(tvSpecPanel);
-		mainPanel.add(compLabel);
+		mainPanel.add(compCategoryPanel);
 		mainPanel.add(compSpecPanel);
 		mainPanel.add(exitPanel);
 		
 		exitButton.addActionListener(new exitButtonListener());
+		
+		frame.pack();
 		
 		frame.setVisible(true);
 	}
@@ -138,16 +138,16 @@ public class AddWindow extends JFrame
 	{
 		// Category Panel
 		tvCategoryPanel = new JPanel();
-		tvCategoryPanel.setLayout(new FlowLayout());
 		TVLabel = new JLabel("TV");
+		TVLabel.setPreferredSize(new Dimension(100, 100));
 		TVLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		TVLabel.setVerticalAlignment(SwingConstants.CENTER);
 		tvCategoryPanel.add(TVLabel);
 		compCategoryPanel = new JPanel();
-		compCategoryPanel.setLayout(new FlowLayout());
 		compLabel = new JLabel("Computer");
 		compLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		compLabel.setVerticalAlignment(SwingConstants.CENTER);
+		compCategoryPanel.setPreferredSize(new Dimension(100, 100));
 		compCategoryPanel.add(compLabel);
 		
 		// Specifications Panel
@@ -251,7 +251,7 @@ public class AddWindow extends JFrame
 		compSpecPanel.add(compQuantityPanel);
 		compSpecPanel.add(compUpdatePanel);
 		
-		// Cancel panel
+		// Exit panel
 		exitPanel = new JPanel();
 		exitButton = new JButton("Exit");
 		exitButton.setPreferredSize(new Dimension(150, 100));
@@ -398,7 +398,7 @@ public class AddWindow extends JFrame
 				{
 					InventoryMainView mWindow = new InventoryMainView(system);
 				}
-				catch (IOException e1)
+				catch (Exception e1)
 				{
 					e1.printStackTrace();
 				}
