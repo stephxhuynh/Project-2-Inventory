@@ -33,10 +33,12 @@ public class InventoryMainView extends JFrame
 	private JPanel mainPanel;			// To reference the main panel
 	private JPanel buttonPanel;			// To reference the button panel
 	private JPanel addPanel;			// To reference the add panel
+	private JPanel removePanel;			// To reference the remove panel
 	private JPanel checkPanel;			// To reference the check panel
 	private JPanel infoPanel;			// To reference the info panel
 	private JPanel jTablePanel;			// To reference the jTable panel
 	private JButton addButton;			// To reference an add button
+	private JButton removeButton;		// To reference a remove button
 	private JButton checkButton;		// To reference a check button
 	private JTextArea textInput;		// To reference text area
 	private JTable table;				// to reference table
@@ -95,16 +97,23 @@ public class InventoryMainView extends JFrame
 		// Button Panel
 		buttonPanel = new JPanel();
 		addPanel = new JPanel();
+		removePanel = new JPanel();
 		checkPanel = new JPanel();
-		buttonPanel.setLayout(new GridLayout(2, 1));
+		buttonPanel.setLayout(new GridLayout(3, 1));
 		addButton = new JButton("Add");
 		addButton.setPreferredSize(new Dimension(150, 150));
+		removeButton = new JButton("Remove");
+		removeButton.setPreferredSize(new Dimension(150, 150));
 		checkButton = new JButton("Check");
 		checkButton.setPreferredSize(new Dimension(150, 150));
 		addPanel.add(addButton);
+		removePanel.add(removeButton);
 		checkPanel.add(checkButton);
 		buttonPanel.add(addPanel);
+		buttonPanel.add(removePanel);
 		buttonPanel.add(checkPanel);
+		
+		
 		
 		addButton.addActionListener(new ButtonListener());
 		checkButton.addActionListener(new ButtonListener());

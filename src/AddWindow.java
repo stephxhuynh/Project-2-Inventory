@@ -1,8 +1,5 @@
 import javax.swing.*;		// Needed for Swing classes
 import java.awt.event.*;	// Needed for ActionListener Interface
-import java.io.IOException; // Needed for IO exception
-import java.util.ArrayList;
-import java.io.IOException;
 import java.awt.*;			// Needed for Color class
 
 /**
@@ -131,9 +128,8 @@ public class AddWindow extends JFrame
 	}
 	
 	/**
-	 * builds panel of add window
+	 * Builds panel of add window
 	 */
-	
 	private void buildMainPanel()
 	{
 		// Category Panel
@@ -275,7 +271,6 @@ public class AddWindow extends JFrame
 	
 	/**
 	 * Action listener for TV type radio buttons
-	 *
 	 */
 	private class tvTypeRadioListener implements ActionListener
 	{
@@ -295,7 +290,6 @@ public class AddWindow extends JFrame
 	
 	/**
 	 * Action listener for TV screen size radio buttons
-	 *
 	 */
 	private class tvScreenRadioListener implements ActionListener
 	{
@@ -313,11 +307,9 @@ public class AddWindow extends JFrame
 	
 	/**
 	 * Action listener to update (add or modify) inventory arraylist for TV items
-	 *
 	 */
 	private class tvUpdateListener implements ActionListener
 	{
-
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
@@ -326,21 +318,14 @@ public class AddWindow extends JFrame
 			quantity = Integer.parseInt(input);
 			
 			system.ifItemExists("TV", tvSize, tvType, quantity);
-//			system.getList().add(new TV("TV", tvSize, tvType));
-//			system.getList().get(InventorySystem.count).setQuantity(quantity);
-//			InventorySystem.count++;
 			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
 					+ "\t TV Size: " + tvSize + " Type: " + tvType + " added");
-			
 		}
-		
 	}
 	
 	/**
 	 * Action listener for computer screen size radio buttons
-	 *
 	 */
-	
 	private class compScreenRadioListener implements ActionListener
 	{
 		@Override
@@ -352,8 +337,7 @@ public class AddWindow extends JFrame
 				compSize = 20;
 			if (e.getSource() == screen25)
 				compSize = 25;
-		}
-		
+		}	
 	}
 	
 	/**
@@ -370,9 +354,6 @@ public class AddWindow extends JFrame
 			quantity = Integer.parseInt(input);
 			
 			system.ifItemExists("COMPUTER", compSize, "NA", quantity);
-//			system.getList().add(new Computer("COMPUTER", compSize));
-//			system.getList().get(InventorySystem.count).setQuantity(quantity);
-//			InventorySystem.count++;
 			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
 					+ "\t Computer Size: " + compSize + "in. added");	
 		}	
@@ -381,7 +362,6 @@ public class AddWindow extends JFrame
 	/**
 	 * Action listener when user clicks exit button on add window
 	 * Takes user back to main view window
-	 *
 	 */
 	private class exitButtonListener implements ActionListener
 	{
@@ -393,7 +373,6 @@ public class AddWindow extends JFrame
 				frame.dispose();
 				//added system for constructor
 //				InventoryMainView mWindow = new InventoryMainView(system);
-
 				try
 				{
 					InventoryMainView mWindow = new InventoryMainView(system);
@@ -405,6 +384,4 @@ public class AddWindow extends JFrame
 			}
 		}
 	}
-	
-
 }

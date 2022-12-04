@@ -1,6 +1,5 @@
 import javax.swing.*; // Needed for Swing classes
 import java.awt.event.*; // Needed for ActionListener Interface
-import java.io.IOException; // Needed for IO exception
 import java.awt.*; // Needed for Color class
 
 
@@ -56,14 +55,6 @@ public class CheckWindow extends JFrame
 	private JRadioButton screen20; 				// To reference 20 inch computer screen size
 	private JRadioButton screen25; 				// To reference 25 inch computer screen size
 	private ButtonGroup compScreenButtonGroup;	// To reference computer screen size radio button group
-
-	// Quantity
-	private JTextField tvQuantityTextField;		// To reference the TV quantity text field
-	private JTextField compQuantityTextField;	// To reference the computer quantity text field
-	private JPanel tvQuantityPanel; 			// To reference the TV quantity panel
-	private JLabel tvQuantityLabel; 			// To reference the TV quantity label
-	private JPanel compQuantityPanel; 			// To reference the computer quantity panel
-	private JLabel compQuantityLabel; 			// To reference the computer quantity label
 	
 	// Check Button/Panel
 	private JPanel tvCheckPanel;				// To reference the TV check panel
@@ -124,6 +115,9 @@ public class CheckWindow extends JFrame
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Builds panel of check window
+	 */
 	private void buildMainPanel()
 	{
 		// Category Panel
@@ -233,6 +227,9 @@ public class CheckWindow extends JFrame
 		compCheckButton.addActionListener(new compCheckListener());
 	}
 
+	/**
+	 * Action listener for TV type radio buttons
+	 */
 	private class tvTypeRadioListener implements ActionListener
 	{
 		@Override
@@ -249,9 +246,11 @@ public class CheckWindow extends JFrame
 		}
 	}
 
+	/**
+	 * Action listener for TV screen size radio buttons
+	 */
 	private class tvScreenRadioListener implements ActionListener
 	{
-
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
@@ -261,9 +260,11 @@ public class CheckWindow extends JFrame
 		}
 	}
 
+	/**
+	 * Action listener for computer screen size radio buttons
+	 */
 	private class compScreenRadioListener implements ActionListener
 	{
-
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
@@ -271,9 +272,11 @@ public class CheckWindow extends JFrame
 			if (e.getSource() == screen20) compSize = 20;
 			if (e.getSource() == screen25) compSize = 25;
 		}
-
 	}
 
+	/**
+	 * Action listener to check tv quantity and if tv spec exists in inventory
+	 */
 	private class tvCheckListener implements ActionListener
 	{
 
@@ -284,7 +287,7 @@ public class CheckWindow extends JFrame
 			if(quantity > 0)
 			{
 				JOptionPane.showMessageDialog(CheckWindow.this, "Quantity of TV " 
-						+ tvSize + "in " + tvType + " is:        " + quantity);
+						+ tvSize + "in " + tvType + " is:     " + quantity);
 			}
 			else
 			{
@@ -293,6 +296,9 @@ public class CheckWindow extends JFrame
 		}
 	}
 	
+	/**
+	 * Action listener to check computer quantity and if tv spec exists in inventory
+	 */
 	private class compCheckListener implements ActionListener
 	{
 
@@ -303,7 +309,7 @@ public class CheckWindow extends JFrame
 			if(quantity > 0)
 			{
 				JOptionPane.showMessageDialog(CheckWindow.this, "Quantity of Computer " 
-						+ compSize + "in is:        " + quantity);
+						+ compSize + "in is:     " + quantity);
 			}
 			else
 			{
@@ -312,6 +318,10 @@ public class CheckWindow extends JFrame
 		}
 	}
 	
+	/**
+	 * Action listener when user clicks exit button on add window
+	 * Takes user back to main view window
+	 */
 	private class exitButtonListener implements ActionListener
 	{
 		@Override
@@ -330,11 +340,5 @@ public class CheckWindow extends JFrame
 				}
 			}
 		}
-	}
-
-	public static void main(String[] args)
-	{
-		// TODO Auto-generated method stub
-
 	}
 }
