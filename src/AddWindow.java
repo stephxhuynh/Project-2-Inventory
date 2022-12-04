@@ -271,8 +271,6 @@ public class AddWindow extends JFrame
 		
 		tvUpdateButton.addActionListener(new tvUpdateListener());
 		compUpdateButton.addActionListener(new compUpdateListener());
-		
-		
 	}
 	
 	/**
@@ -301,7 +299,6 @@ public class AddWindow extends JFrame
 	 */
 	private class tvScreenRadioListener implements ActionListener
 	{
-
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
@@ -311,7 +308,6 @@ public class AddWindow extends JFrame
 				tvSize = 50;
 			if (e.getSource() == screen60)
 				tvSize = 60;
-			
 		}
 	}
 	
@@ -329,7 +325,6 @@ public class AddWindow extends JFrame
 			input = tvQuantityTextField.getText();
 			quantity = Integer.parseInt(input);
 			
-			
 			system.ifItemExists("TV", tvSize, tvType, quantity);
 //			system.getList().add(new TV("TV", tvSize, tvType));
 //			system.getList().get(InventorySystem.count).setQuantity(quantity);
@@ -341,7 +336,6 @@ public class AddWindow extends JFrame
 		
 	}
 	
-	
 	/**
 	 * Action listener for computer screen size radio buttons
 	 *
@@ -349,7 +343,6 @@ public class AddWindow extends JFrame
 	
 	private class compScreenRadioListener implements ActionListener
 	{
-
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
@@ -369,7 +362,6 @@ public class AddWindow extends JFrame
 	 */
 	private class compUpdateListener implements ActionListener
 	{
-
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
@@ -382,10 +374,8 @@ public class AddWindow extends JFrame
 //			system.getList().get(InventorySystem.count).setQuantity(quantity);
 //			InventorySystem.count++;
 			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
-					+ "\t Computer Size: " + compSize + "in. added");
-			
-		}
-		
+					+ "\t Computer Size: " + compSize + "in. added");	
+		}	
 	}
 	
 	/**
