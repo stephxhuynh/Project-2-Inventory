@@ -707,17 +707,17 @@ public class InventorySystem
 
 				if (inventory.get(i) instanceof TV)
 				{
-					pWriter.println(((TV) inventory.get(i)).getType() + " "
-							+ inventory.get(i).getCategory() + " "
-							+ inventory.get(i).getScreenSize() + " "
-							+ inventory.get(i).getQuantity() + " "
+					pWriter.println(((TV) inventory.get(i)).getType() + "\t"
+							+ inventory.get(i).getCategory() + "\t"
+							+ inventory.get(i).getScreenSize() + "\t"
+							+ inventory.get(i).getQuantity() + "\t"
 							+ inventory.get(i).getLocation());
 				}
 				else if (inventory.get(i) instanceof Computer)
 				{
-					pWriter.println("NA " + inventory.get(i).getCategory() + " "
-							+ inventory.get(i).getScreenSize() + " "
-							+ inventory.get(i).getQuantity() + " "
+					pWriter.println("NA " + inventory.get(i).getCategory() + "\t"
+							+ inventory.get(i).getScreenSize() + "\t"
+							+ inventory.get(i).getQuantity() + "\t"
 							+ inventory.get(i).getLocation());
 				}
 			}

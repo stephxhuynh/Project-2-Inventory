@@ -4,6 +4,10 @@ import java.awt.*;			// Needed for Color class
 import java.io.*;  			// Needed for file reading
 import java.util.*;			// Needed for file reading
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Responsibilities of class: Contain home page of GUI for inventory system
@@ -43,15 +47,13 @@ public class InventoryMainView extends JFrame
 	// Model/View fields
 	private InventoryMainView view;
 	private InventorySystem system;
-//	private ArrayList<Item> inventory;
 	
 	/**
 	 * Constructor
-	 * @throws IOException 
+	 * @throws Exception 
 	 */
-
-	public InventoryMainView(InventorySystem system) throws IOException
-
+	public InventoryMainView(InventorySystem system) throws Exception
+	
 //	public InventoryMainView() throws IOException
 	{	
 		view = this;
@@ -80,14 +82,16 @@ public class InventoryMainView extends JFrame
 		mainPanel.add(buttonPanel, BorderLayout.WEST);
 		mainPanel.add(infoPanel, BorderLayout.CENTER);
 		
+		frame.pack();
+		
 		frame.setVisible(true);
 	}
 	
 	/**
 	 * builds panel of main view window
-	 * @throws IOException
+	 * @throws Exception 
 	 */
-	private void buildMainPanel() throws IOException
+	private void buildMainPanel() throws Exception
 	{
 		// Button Panel
 		buttonPanel = new JPanel();
@@ -109,16 +113,16 @@ public class InventoryMainView extends JFrame
 		// Info Panel
 		infoPanel = new JPanel();
 		// Data to be displayed in the JTable
-		String[][] data = {
-				{"OLED", "TV", "40", "25", "1", "1"},
-				{"NA", "COMPUTER", "20", "23", "2", "2"}
-		};
+//		String[][] data = {
+//				{"OLED", "TV", "40", "25", "1", "1"},
+//				{"NA", "COMPUTER", "20", "23", "2", "2"}]
+		String[][] data = create2DMatrixFromFile("inventoryinfo.txt", 6);
 		
 		// Column Names
 		String[] columnNames = {"Type", "Category", "Screen Size", "Quantity", "Aisle", "Shelf"};
 		// Initialize table
 		table = new JTable(data, columnNames);
-		table.setBounds(30, 40, 700, 500);
+		table.setBounds(30, 40, 1000, 700);
 		scrollPane = new JScrollPane(table);
 //		try
 //		{
@@ -149,7 +153,6 @@ public class InventoryMainView extends JFrame
 	/**
 	 * Action listener for check or add buttons 
 	 * Opens new window of check or add based on what's clicked
-	 *
 	 */
 	private class ButtonListener implements ActionListener
 	{
@@ -171,12 +174,52 @@ public class InventoryMainView extends JFrame
 		}
 	}
 	
+	
+	public static String[][] create2DMatrixFromFile(String fileName, int numOfFields) throws Exception
+	{
+		List<String> infoList = new ArrayList<String>();
+		
+		String delimiter = "\\s+";
+		String currentLine;
+		
+		try
+		{
+			FileReader fr = new FileReader(fileName);
+			BufferedReader br = new BufferedReader(fr);
+			
+			while((currentLine = br.readLine()) != null)
+			{
+				infoList.add(currentLine);
+			}
+			// Get size of the infoList
+			int infoCount = infoList.size();
+			
+			String infoArray[][] = new String[infoCount][numOfFields];
+			String[] data;
+			
+			for (int i = 0; i < infoCount; i++)
+			{
+				data = infoList.get(i).split(delimiter);
+				for (int j = 0; j < data.length; j++)
+				{
+					infoArray[i][j] = data[j];
+				}
+			}
+			return infoArray;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			return null;
+		}
+	}
+	
 	/**
 	 * main method to create a window of the main view
 	 * @param args
-	 * @throws IOException
+	 * @throws Exception 
 	 */
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args) throws Exception
 	{
 		new InventoryMainView(new InventorySystem());
 //		new InventoryMainView();

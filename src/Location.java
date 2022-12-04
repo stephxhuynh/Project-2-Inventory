@@ -85,6 +85,6 @@ public class Location
 	@Override
 	public String toString()
 	{
-		return " \t Aisle: " + aisle + " \t Shelf: " + shelf;
+		return "\t" + aisle + "\t" + shelf;
 	}
 }

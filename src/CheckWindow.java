@@ -223,7 +223,7 @@ public class CheckWindow extends JFrame
 		exitButton.setPreferredSize(new Dimension(150, 100));
 		exitPanel.add(exitButton);
 
-		// Button Listeners
+		// Radio Button Listeners
 		OLEDrButton.addActionListener(new tvTypeRadioListener());
 		LCDrButton.addActionListener(new tvTypeRadioListener());
 
