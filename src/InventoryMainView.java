@@ -166,7 +166,7 @@ public class InventoryMainView extends JFrame
 					int selectedRow = table.getSelectedRow();
 					model.removeRow(selectedRow);
 					system.getList().remove(selectedRow);
-					system.getList().writeToFile("inventoryInfo.txt");
+					system.writeToFile("inventoryInfo.txt");
 				}
 				catch(Exception E)
 				{

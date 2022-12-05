@@ -345,12 +345,17 @@ public class AddWindow extends JFrame
 		public void actionPerformed(ActionEvent e)
 		{
 			String input = "";
-			input = compQuantityTextField.getText();
-			quantity = Integer.parseInt(input);
-			
-			system.ifItemExists("COMPUTER", compSize, "NA", quantity);
+			try 
+			{
+				quantity = Integer.parseInt(input);
+				system.ifItemExists("COMPUTER", compSize, "NA", quantity);
 			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
-					+ "\t Computer Size: " + compSize + "in. added");	
+					+ "\t Computer Size: " + compSize + "in. added");
+			}
+			catch (NumberFormatException ex)
+			{
+				JOptionPane.showMessageDialog(AddWindow.this, "You must enter an integer", "Invalid Selection" , JOptionPane.ERROR_MESSAGE, null);
+			}
 		}	
 	}
 	
