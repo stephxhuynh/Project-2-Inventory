@@ -45,6 +45,7 @@ public class InventoryMainView extends JFrame
 	private JTextArea textInput;		// To reference text area
 	private JTable table;				// to reference table
 	private JScrollPane scrollPane;		// to reference a scroll pane
+	private DefaultTableModel model;
 	
 	final int WINDOW_WIDTH = 1200;		// Window width in pixels
 	final int WINDOW_HEIGHT = 700;		// Window height in pixels
@@ -128,7 +129,9 @@ public class InventoryMainView extends JFrame
 		// Column Names
 		String[] columnNames = {"Type", "Category", "Screen Size", "Quantity", "Aisle", "Shelf"};
 		// Initialize table
-		table = new JTable(data, columnNames);
+		model = new DefaultTableModel(data, columnNames);
+//		table = new JTable(data, columnNames);
+		table = new JTable(model);
 //		table.setBounds(30, 40, 1000, 700);
 		scrollPane = new JScrollPane(table);
 		jTablePanel.add(scrollPane);
@@ -158,13 +161,12 @@ public class InventoryMainView extends JFrame
 			}
 			if (e.getSource() == removeButton)
 			{
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				try 
 				{
 					int selectedRow = table.getSelectedRow();
 					model.removeRow(selectedRow);
 					system.getList().remove(selectedRow);
-					system.writeToFile("inventoryInfo.txt");
+					system.getList().writeToFile("inventoryInfo.txt");
 				}
 				catch(Exception E)
 				{
