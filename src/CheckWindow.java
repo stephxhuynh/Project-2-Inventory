@@ -123,6 +123,7 @@ public class CheckWindow extends JFrame
 		// Category Panel
 		tvCategoryPanel = new JPanel();
 		TVLabel = new JLabel("TV");
+		TVLabel.setPreferredSize(new Dimension(100, 100));
 		TVLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		TVLabel.setVerticalAlignment(SwingConstants.CENTER);
 		tvCategoryPanel.add(TVLabel);
@@ -130,6 +131,7 @@ public class CheckWindow extends JFrame
 		compLabel = new JLabel("Computer");
 		compLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		compLabel.setVerticalAlignment(SwingConstants.CENTER);
+		compLabel.setPreferredSize(new Dimension(100, 100));
 		compCategoryPanel.add(compLabel);
 
 		// Specifications Panel

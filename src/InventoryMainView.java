@@ -158,7 +158,6 @@ public class InventoryMainView extends JFrame
 		}
 	}
 	
-	
 	public static String[][] create2DMatrixFromFile(String fileName, int numOfFields) throws Exception
 	{
 		List<String> infoList = new ArrayList<String>();

@@ -143,7 +143,7 @@ public class AddWindow extends JFrame
 		compLabel = new JLabel("Computer");
 		compLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		compLabel.setVerticalAlignment(SwingConstants.CENTER);
-		compCategoryPanel.setPreferredSize(new Dimension(100, 100));
+		compLabel.setPreferredSize(new Dimension(100, 100));
 		compCategoryPanel.add(compLabel);
 		
 		// Specifications Panel
