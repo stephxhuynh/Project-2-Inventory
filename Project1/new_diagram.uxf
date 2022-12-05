@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>64</x>
-      <y>240</y>
+      <x>360</x>
+      <y>552</y>
       <w>168</w>
       <h>152</h>
     </coordinates>
@@ -28,127 +28,30 @@ Tv is an item
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>144</x>
-      <y>176</y>
-      <w>240</w>
-      <h>80</h>
+      <x>440</x>
+      <y>456</y>
+      <w>168</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>280.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>384</x>
-      <y>440</y>
-      <w>168</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>Desktop
---
--graphics: String
---
-+getGraphics(): String
-+toString(): category,
-quantity, graphics,
-memory, screenSize
---
-Relationship
-Desktop is a computer
-
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>848</x>
-      <y>192</y>
-      <w>184</w>
-      <h>152</h>
-    </coordinates>
-    <panel_attributes>Chargeable
-&lt;&lt;interface&gt;&gt;
---
-+getBatteryCharge(): int
---
-Relationship
-Laptop is chargeable
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>760</x>
-      <y>392</y>
-      <w>168</w>
-      <h>152</h>
-    </coordinates>
-    <panel_attributes>Laptop
---
--batteryLife: int
---
-+getBatteryCharge(): int
-+toString(): category,
-batteryLife,
-quantity, screenSize, memory
---
-Relationship
-Laptop is a computer
-Laptop is Chargeable</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes>190.0;10.0;10.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>336</y>
-      <w>104</w>
+      <x>704</x>
+      <y>472</y>
+      <w>184</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>480</x>
-      <y>192</y>
-      <w>104</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>512</x>
-      <y>384</y>
-      <w>32</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>20.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>864</x>
-      <y>336</y>
-      <w>56</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;70.0;50.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;210.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>368</x>
-      <y>32</y>
+      <x>592</x>
+      <y>312</y>
       <w>216</w>
       <h>168</h>
     </coordinates>
@@ -174,8 +77,8 @@ abstract getScreenSize(): int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>512</x>
-      <y>240</y>
+      <x>816</x>
+      <y>552</y>
       <w>168</w>
       <h>152</h>
     </coordinates>
@@ -198,39 +101,8 @@ Computer is an item
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>136</x>
-      <y>440</y>
-      <w>168</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>GraphicType
-&lt;&lt;interface&gt;
---
-+getGraphics(): String
---
-Relationship
-Desktop has a graphics card
-
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>296</x>
-      <y>496</y>
-      <w>104</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>680</x>
-      <y>32</y>
+      <x>936</x>
+      <y>192</y>
       <w>168</w>
       <h>152</h>
     </coordinates>
@@ -245,12 +117,136 @@ Desktop has a graphics card
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
+      <x>800</x>
+      <y>256</y>
+      <w>152</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>312</x>
+      <y>224</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>InventoryMainView
+---GUI---
+--
+- system: InventorySystem
+- view: InventoryMainView
+--
++InventoryMainView(system)
+-buildMainPanel()
+-ButtonListener()
++create2DMatrixFromFile(String,
+numOfFields)
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>192</y>
+      <w>192</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>8</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>AddWindow
+---GUI---
+--
+- system: InventorySystem
+--
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
       <y>96</y>
-      <w>120</w>
+      <w>200</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>230.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>72</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>InventorySystem
+--
+-arrayList&lt;Item&gt;
+--
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>216</y>
+      <w>88</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>16</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>CheckWindow
+---GUI---
+--
+- system: InventorySystem
+--
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>808</x>
+      <y>120</y>
+      <w>96</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;20.0</additional_attributes>
+    <additional_attributes>100.0;10.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>

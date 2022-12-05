@@ -203,17 +203,6 @@ public class AddWindow extends JFrame
 		// Quantity panel for TV
 		tvQuantityLabel = new JLabel("Quantity");
 		tvQuantityTextField = new JTextField(5);
-		tvQuantityTextField.addKeyListener(new KeyAdapter()
-		{
-			public void keyPressed(KeyEvent e)
-			{
-				char input = e.getKeyChar();
-				if ((input >= '0') || (input <= '9') && (input != '\b'))
-				{
-					e.consume();
-				}
-			}
-		});
 		tvQuantityPanel = new JPanel(new FlowLayout());
 		tvQuantityPanel.add(tvQuantityLabel);
 		tvQuantityPanel.add(tvQuantityTextField);
@@ -315,11 +304,17 @@ public class AddWindow extends JFrame
 		{
 			String input = "";
 			input = tvQuantityTextField.getText();
-			quantity = Integer.parseInt(input);
-			
-			system.ifItemExists("TV", tvSize, tvType, quantity);
-			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
-					+ "\t TV Size: " + tvSize + " Type: " + tvType + " added");
+			try 
+			{
+				quantity = Integer.parseInt(input);
+				system.ifItemExists("TV", tvSize, tvType, quantity);
+				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
+						+ "\t TV Size: " + tvSize + " Type: " + tvType + " added");
+			}
+			catch (NumberFormatException ex)
+			{
+				JOptionPane.showMessageDialog(AddWindow.this, "You must enter an integer", "Invalid Selection" , JOptionPane.ERROR_MESSAGE, null);
+			}
 		}
 	}
 	

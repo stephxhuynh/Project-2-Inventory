@@ -1,4 +1,6 @@
 import javax.swing.*;		// Needed for Swing classes
+import javax.swing.table.DefaultTableModel;
+
 import java.awt.event.*;	// Needed for ActionListener Interface
 import java.awt.*;			// Needed for Color class
 import java.io.*;  			// Needed for file reading
@@ -113,10 +115,9 @@ public class InventoryMainView extends JFrame
 		buttonPanel.add(removePanel);
 		buttonPanel.add(checkPanel);
 		
-		
-		
 		addButton.addActionListener(new ButtonListener());
 		checkButton.addActionListener(new ButtonListener());
+		removeButton.addActionListener(new ButtonListener());
 		
 		// Info Panel
 		infoPanel = new JPanel();
@@ -154,6 +155,22 @@ public class InventoryMainView extends JFrame
 				frame.dispose();
 				AddWindow addWindow = new AddWindow(system);
 //				AddWindow aWindow = new AddWindow();
+			}
+			if (e.getSource() == removeButton)
+			{
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				try 
+				{
+					int selectedRow = table.getSelectedRow();
+					model.removeRow(selectedRow);
+					system.getList().remove(selectedRow);
+					system.writeToFile("inventoryInfo.txt");
+				}
+				catch(Exception E)
+				{
+					JOptionPane.showMessageDialog(null, E);
+				}
+				
 			}
 		}
 	}
