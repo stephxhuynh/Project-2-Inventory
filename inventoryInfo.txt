@@ -1,4 +1,4 @@
-OLED TV 40 35  	 Aisle: 1 	 Shelf: 1
-NA COMPUTER 20 21  	 Aisle: 2 	 Shelf: 2
-OLED TV 50 2  	 Aisle: 3 	 Shelf: 3
-OLED TV 60 10  	 Aisle: 4 	 Shelf: 4
+OLED TV 40 35  	 1 	  1
+NA COMPUTER 20 21  	  2 	  2
+OLED TV 50 2  	  3 	 3
+OLED TV 60 10  	 4 	  4

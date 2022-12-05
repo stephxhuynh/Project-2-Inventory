@@ -83,7 +83,7 @@ public class InventoryMainView extends JFrame
 		mainPanel.add(buttonPanel, BorderLayout.WEST);
 		mainPanel.add(jTablePanel, BorderLayout.CENTER);
 		
-//		frame.pack();
+		frame.pack();
 		
 		frame.setVisible(true);
 	}
