@@ -375,6 +375,7 @@ public class AddWindow extends JFrame
 //				InventoryMainView mWindow = new InventoryMainView(system);
 				try
 				{
+					system.writeToFile("inventoryInfo.txt");
 					InventoryMainView mWindow = new InventoryMainView(system);
 				}
 				catch (Exception e1)

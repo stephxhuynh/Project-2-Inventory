@@ -207,4 +207,6 @@ public class InventoryMainView extends JFrame
 		new InventoryMainView(new InventorySystem());
 //		new InventoryMainView();
 	}
+	
+	
 }
