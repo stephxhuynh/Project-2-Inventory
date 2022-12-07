@@ -342,8 +342,6 @@ public class AddWindow extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
-//			String input = "";
-//			input = tvQuantityTextField.getText();
 			try 
 			{
 				quantity = Integer.parseInt(compQuantityTextField.getText());

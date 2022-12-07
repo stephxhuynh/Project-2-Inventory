@@ -130,9 +130,7 @@ public class InventoryMainView extends JFrame
 		String[] columnNames = {"Type", "Category", "Screen Size", "Quantity", "Aisle", "Shelf"};
 		// Initialize table
 		model = new DefaultTableModel(data, columnNames);
-//		table = new JTable(data, columnNames);
 		table = new JTable(model);
-//		table.setBounds(30, 40, 1000, 700);
 		scrollPane = new JScrollPane(table);
 		jTablePanel.add(scrollPane);
 		infoPanel.add(jTablePanel);
@@ -157,7 +155,6 @@ public class InventoryMainView extends JFrame
 			{
 				frame.dispose();
 				AddWindow addWindow = new AddWindow(system);
-//				AddWindow aWindow = new AddWindow();
 			}
 			if (e.getSource() == removeButton)
 			{

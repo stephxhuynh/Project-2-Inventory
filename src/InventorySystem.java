@@ -43,29 +43,7 @@ public class InventorySystem
 	}
 
 	public static void main(String[] args) throws IOException
-	{
-
-		// arrayList of Item - can consist of TV or Computer objects that we
-		// make
-//		ArrayList<Item> inventory = new ArrayList<Item>();
-
-		// read any existing inventory
-//		readFromFile("inventoryInfo.txt", inventory);
-//
-//		// opens stream for input
-//		Scanner keyboard = new Scanner(System.in);
-//
-//		// print Menu
-//		printMenu(inventory, keyboard);
-//
-//		writeToFile("inventoryInfo.txt", inventory);
-//
-//		printInventory(inventory);
-//
-//		printQuantity(inventory);
-//
-//		keyboard.close();
-	}
+	{}
 
 	/**
 	 * Prints Menu options and goes into check/add depending on choice
@@ -110,8 +88,6 @@ public class InventorySystem
 	public void addInventory(Scanner keyboard)
 	{
 		String category = null;
-		// int count = 0; //used to keep track of ArrayList indexing
-		// int quantity; //quantity of each Item
 
 		boolean choice = true;
 
@@ -149,7 +125,6 @@ public class InventorySystem
 	 */
 	public void checkInventory(Scanner keyboard)
 	{
-
 		// holds user input variables that will help us check inventory
 		String category;
 		String type;
@@ -288,7 +263,6 @@ public class InventorySystem
 	 * @return String category
 	 * @throws IllegalArgumentException if choice category is not "TV" or
 	 *                                  "COMPUTER"
-	 * 
 	 */
 	public String askCategory(Scanner keyboard)
 	{
@@ -412,72 +386,6 @@ public class InventorySystem
 		} while (!validInput);
 		return size;
 	}
-
-	/**
-	 * Search for TV item in inventory to find quantity of item if it exists in
-	 * inventory arraylist
-	 * if item exists, print quantity; if not, print does not exist
-	 * 
-	 * @param inventory to search
-	 * @param category  to compare
-	 * @param size      to compare
-	 * @param type      to compare
-	 *
-	 */
-//	public void searchTVInventory(String category, int size, String type)
-//	{
-//		boolean exists = false;
-//		int quantity = 0;
-//		for (int i = 0; i < inventory.size(); i++)
-//		{
-//			if (inventory.get(i).getCategory().equals(category))
-//			{
-//				if (inventory.get(i).getScreenSize() == size)
-//					if (((TV) inventory.get(i)).getType().equals(type))
-//				{
-//					exists = true;
-//					quantity = inventory.get(i).getQuantity();
-//				}
-//
-//			}
-//		}
-//		if (exists == true)
-//		{
-//			System.out.println("\nQuantity of " + category + " " + size + "in "
-//					+ type + " is:\t" + quantity);
-//		}
-//		else System.out.println("Item does not exist");
-//
-//	}
-
-	/**
-	 * Search for Computer item in inventory to find quantity if item exists in
-	 * inventory arraylist
-	 * if item exist, print quantity; if not, print does not exist
-	 * 
-	 * @param inventory
-	 * @param category
-	 * @param size
-	 * @return int quantity
-	 */
-//	public void searchComputerInventory(String category, int size)
-//	{
-//		boolean exists = false;
-//		int quantity = 0;
-//		for (int i = 0; i < inventory.size(); i++)
-//		{
-//			if (inventory.get(i).getCategory().equals(category))
-//				if (inventory.get(i).getScreenSize() == size)
-//			{
-//				exists = true;
-//				quantity = inventory.get(i).getQuantity();
-//			}
-//		}
-//		if (exists == true) System.out.println("\nQuantity of " + category + " "
-//				+ size + "in is:\t" + quantity);
-//		else System.out.println("Item does not exist");
-//
-//	}
 
 	/**
 	 * ask user for quantity they want to add
