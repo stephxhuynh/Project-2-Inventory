@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 NA COMPUTER	15	1		1	1
 OLED	TV	40	3		2	2
 OLED	TV	50	1		3	3
 LCD	TV	50	1		4	4
+=======
+>>>>>>> branch 'main' of https://github.com/stephxhuynh/Project-2-Inventory.git

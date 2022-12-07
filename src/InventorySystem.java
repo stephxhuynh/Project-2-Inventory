@@ -224,9 +224,6 @@ public class InventorySystem
 		type = askTVType(keyboard);
 
 		size = askTVSize(keyboard);
-
-		// checks if item exists and adds quantities to existing or new item
-//		ifItemExists(category, size, type, keyboard);
 	}
 
 	/**
@@ -241,10 +238,6 @@ public class InventorySystem
 		int size;
 
 		size = askComputerSize(keyboard);
-
-		// "NA" passed because computer does not have type
-		// checks if item exists and adds quantities to existing or new item
-//		ifItemExists(category, size, "NA", keyboard);
 	}
 
 	/**
@@ -735,81 +728,6 @@ public class InventorySystem
 			pWriter.close();
 		}
 	}
-
-	/**
-	 * checks if item exists before adding new item to inventory
-	 * if it does, prompt user to add quantity to it
-	 * if not, create new object in inventory ArrayList and prompt user to add
-	 * quantity
-	 * 
-	 * @param inventory to search and add to
-	 * @param category
-	 * @param size
-	 * @param type
-	 * @param keyboard
-	 */
-//	public void ifItemExists(String category,
-//			int size, String type, Scanner keyboard)
-//	{
-//		boolean exists = false;
-//		int indexExist = -1;
-//		int quantity = 0;
-//
-//		// search through inventory ArrayList
-//		// if variables match, item exists, and save index of where item exists
-//		for (int i = 0; i < inventory.size(); i++)
-//		{
-//			if (inventory.get(i) instanceof TV)
-//			{
-//				if (((TV) inventory.get(i)).getType().equals(type))
-//					if (inventory.get(i).getScreenSize() == size)
-//				{
-//					exists = true;
-//					indexExist = i;
-//				}
-//
-//			}
-//			else if (inventory.get(i) instanceof Computer)
-//			{
-//				if (inventory.get(i).getScreenSize() == size)
-//				{
-//					exists = true;
-//					indexExist = i;
-//				}
-//			}
-//		}
-//
-//		// if item exists, add quantity of items to that item
-//		if (exists == true)
-//		{
-//			System.out.println("\nItem already exists. Simply add quantity.");
-//			quantity = askQuantity(keyboard);
-//			quantity = quantity + inventory.get(indexExist).getQuantity();
-//			inventory.get(indexExist).setQuantity(quantity);
-//		}
-//		// else if inventory does not exist, create new item/object depending on
-//		// specified category
-//		else if (exists == false)
-//		{
-//			if (category.equals("TV"))
-//			{
-//				inventory.add(new TV(category, size, type));
-//				quantity = askQuantity(keyboard);
-//				inventory.get(count).setQuantity(quantity);
-//				//increasing count to index through arraylist for new items
-//				count++;
-//			}
-//			else
-//			{
-//				inventory.add(new Computer(category, size));
-//				quantity = askQuantity(keyboard);
-//				inventory.get(count).setQuantity(quantity);
-//				//increasing count to index through arraylist for new items
-//				count++;
-//			}
-//		}
-//
-//	}
 	
 	/**
 	 * GUI IMPLEMENTATION:
