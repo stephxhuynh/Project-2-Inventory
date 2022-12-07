@@ -357,6 +357,7 @@ public class AddWindow extends JFrame
 			{
 				JOptionPane.showMessageDialog(AddWindow.this, "You must enter an integer", 
 						"Invalid Selection" , JOptionPane.ERROR_MESSAGE, null);
+				//hello
 			}
 		}	
 	}
