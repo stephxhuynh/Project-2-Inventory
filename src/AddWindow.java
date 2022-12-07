@@ -344,12 +344,13 @@ public class AddWindow extends JFrame
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
-			String input = "";
+//			String input = "";
+//			input = tvQuantityTextField.getText();
 			try 
 			{
-				quantity = Integer.parseInt(input);
+				quantity = Integer.parseInt(compQuantityTextField.getText());
 				system.ifItemExists("COMPUTER", compSize, "NA", quantity);
-			JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
+				JOptionPane.showMessageDialog(AddWindow.this, "Quantity: " + quantity 
 					+ "\t Computer Size: " + compSize + "in. added");
 			}
 			catch (NumberFormatException ex)
