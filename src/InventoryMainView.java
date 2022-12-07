@@ -61,6 +61,7 @@ public class InventoryMainView extends JFrame
 	public InventoryMainView(InventorySystem system) throws Exception
 	{	
 		view = this;
+		//helloo
 		this.system = system;
 		
 		// Create new JFrame
