@@ -83,14 +83,12 @@ public class AddWindow extends JFrame
 	private int tvSize;
 	private int quantity;
 	private int compSize;
-//	private ArrayList<Item> inventory;
 	
 	/**
 	 * Constructor
 	 * @param InventorySystem information to access arraylist and methods
 	 */
 	public AddWindow(InventorySystem system)
-//	public AddWindow()
 	{
 		this.system = system;
 		system.printInventory();

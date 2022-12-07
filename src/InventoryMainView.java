@@ -170,7 +170,7 @@ public class InventoryMainView extends JFrame
 				}
 				catch(Exception E)
 				{
-					JOptionPane.showMessageDialog(null, E);
+					JOptionPane.showMessageDialog(null, "Please make a selection on an item to remove.");
 				}
 				
 			}
