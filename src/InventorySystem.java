@@ -709,7 +709,6 @@ public class InventorySystem
 				if (inventory.get(i) instanceof TV)
 				{
 					count++;
-					// hello
 					pWriter.println(((TV) inventory.get(i)).getType() + "\t"
 							+ inventory.get(i).getCategory() + "\t"
 							+ inventory.get(i).getScreenSize() + "\t"
