@@ -692,6 +692,7 @@ public class InventorySystem
 	{
 		FileWriter fWriter = null;
 		PrintWriter pWriter = null;
+		count = 0;
 		try
 		{
 			fWriter = new FileWriter(fileName);
@@ -707,6 +708,7 @@ public class InventorySystem
 
 				if (inventory.get(i) instanceof TV)
 				{
+					count++;
 					pWriter.println(((TV) inventory.get(i)).getType() + "\t"
 							+ inventory.get(i).getCategory() + "\t"
 							+ inventory.get(i).getScreenSize() + "\t"
@@ -715,6 +717,7 @@ public class InventorySystem
 				}
 				else if (inventory.get(i) instanceof Computer)
 				{
+					count++;
 					pWriter.println("NA " + inventory.get(i).getCategory() + "\t"
 							+ inventory.get(i).getScreenSize() + "\t"
 							+ inventory.get(i).getQuantity() + "\t"
